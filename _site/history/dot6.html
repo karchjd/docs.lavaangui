@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>lavaan.org - 0.6 series</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">lavaan.org</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">About graphicaLavaan</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../tutorial/before.html" aria-current="page">
+ <span class="menu-text">Tutorial</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../contribute.html">
+ <span class="menu-text">Contribute</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">0.6 series</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/before.html" class="sidebar-item-text sidebar-link">Before you start</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/loading_data.html" class="sidebar-item-text sidebar-link">Loading Data</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  tutorial/model_specfication.qmd
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/fitting.html" class="sidebar-item-text sidebar-link">Model Fitting</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/result.html" class="sidebar-item-text sidebar-link">Inspecting Results</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/appearance.html" class="sidebar-item-text sidebar-link">Changing Graph Appearance</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">0.6 series</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="version-0.6-16" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-16">Version 0.6-16</h5>
+<ul>
+<li>Released on CRAN: 19 July 2023</li>
+<li>New features and user-visible changes:
+<ul>
+<li>this is another maintenance release (mainly fixing some bootstrap issues)</li>
+<li>the computation of robust rmsea/cfi values can be switched off (if the computations take forever); for example: <code>fitMeasures(fit, fm.args = list(robust = FALSE))</code> or <code>summary(fit, fit.measures = TRUE, fm.args = list(robust = FALSE))</code></li>
+<li>sam() handling of zero diagonal elements in THETA is now identical to what is done in lavPredict()</li>
+<li>sam() now uses bounds = “wide.zerovar” when fitting the measurement blocks</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>(just released)</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-15" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-15">Version 0.6-15</h5>
+<ul>
+<li>Released on CRAN: 14 March 2023</li>
+<li>New features and user-visible changes:
+<ul>
+<li>this is just a maintenance release</li>
+<li>estimator = “js” (james-stein) and “jsa” (james-stein aggregated) for (simple) CFA model only.</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>bootstrap + defined parameters + unsuccessful bootstrap runs produced NA values for the standard errors</li>
+<li>bootstrap + fiml + fixed.x = FALSE resulted in (many) unsuccessful boostrap runs</li>
+<li>sam(): when mm.list contains measurement blocks with multiple latent variables, the covariances between the latent variables were fixed to zero</li>
+<li>sam(): equality constraints in the structural part were not handled correctly when computing the (two-step) standard errors</li>
+<li>modification indices: some ~~ elements (between elements in ov.names.y and o.names.x) were not included in the table</li>
+<li>nobs&lt;2 failed for multiple groups when using sampling weights</li>
+<li>categorical + clustered seemed to work (while the clustering was just ignored)</li>
+<li>parameter names were missing in the output of boostrapLavaan()</li>
+<li>sampling.weights= argument was missing in lavCor()</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-14" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-14">Version 0.6-14</h5>
+<ul>
+<li>Released on CRAN: 9 Feb 2023</li>
+<li>New features and user-visible changes:
+<ul>
+<li>this is mostly a bug-fix release</li>
+<li>a new argument ov.order= can be set to “model” (= the default) or “data”; this determines if the internal order of the observed variable names (as reflected in the output of lavNames()) are based on the model syntax or the data</li>
+<li>add new tests: browne.residual.nt.model and browne.residual.adf.model</li>
+<li>initial support (point estimates only) for some non-iterative estimators for (simple) CFA models: estimator = “fabin2”, “fabin3”, “guttman1952”, “bentler1982”</li>
+<li>robust RMSEA/CFI values in the categorical setting will result in NA values if the input (polychoric/tetrachoric) matrix is not positive-definite (use fm.args = list(cat.check.pd = FALSE) to override)</li>
+<li>lavCor() now accepts a logical TRUE/FALSE value for the ordered= argument</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>see version 0.6-15</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-13" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-13">Version 0.6-13</h5>
+<ul>
+<li>Released on CRAN: 9 Jan 2023</li>
+<li>New features and user-visible changes:
+<ul>
+<li>a new function efa() allows for classic (single-group) explorary factor analysis</li>
+<li>a new function lavPredictY() allows for the prediction of ‘y’ values based on ‘x’ values (see ?lavPredictY for a reference)</li>
+<li>a new function lavTest() allows to extract (or compute) one or several test statistics based on an already fitted object</li>
+<li>new test statistics: browne.residual.adf and browne.residual.nt</li>
+<li>summary() and fitMeasures() gain an fm.args= argument, allowing to set options (e.g., rmsea.ci.level) related to fit measures</li>
+<li>lavTestLRT() will now provide the RMSEA based on the difference test</li>
+<li>robust CFI and RMSEA are now computed for more settings: when (all) data is categorical/ordered, when data is continuous but the estimator is MLMV, and when missing = “ml” (based on work done by Victoria Savalei and colleagues)</li>
+<li>new global option scaled.test= determines which test statistic will be scaled (if multiple test statistics have been requested)</li>
+<li>new option gamma.unbiased: if set TRUE, an unbiased version of the so-called Gamma matrix will be used, instead of the regular (biased) version. See this <a href="https://doi.org/10.1080/10705511.2022.2063870">paper</a></li>
+<li>iseed now works correctly in bootstrapLavaan() and related functions thanks to a patch provided by Shu Fai Cheung</li>
+<li>bootstrapLavaan() now always returns all bootstrap runs (not just the converged ones); it also warns about non-admissible solutions</li>
+<li>when bounds = “standard” or “wide”, bounds are now also computed for covariances per default</li>
+<li>the output of lavInspect() for “gamma”, “wls.v”, “wls.obs” and “wls.est” now includes labels</li>
+<li>the sam() function gains alpha.correction= argument to allow for small sample corrections</li>
+</ul></li>
+<li>Important bug fix:
+<ul>
+<li>in all lavaan versions &lt; 0.6-13, there was on error in the computation of scaled (difference) test statistics if 1) a mean and variance adjusted test was used (i.e., test = “scaled.shifted”, or test = “mean.var.adjusted”), 2) multiple groups were involved, and
+<ol start="3" type="1">
+<li>equality constraints (across groups) were involved. A typical setting are measurement invariance tests when data is categorical. In those settings, the resulting test statistic was slightly off (typically &lt;5%). Many thanks to Steffen Gronneberg, Njal Foldnes and Jonas Moss for reporting this.</li>
+</ol></li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>an error is produced when you have missing = “ml”, a robust test statistic, a model with exogenous covariates, fixed.x = TRUE (=the default), and you request fit measures (quickfix: use fixed.x = FALSE) (see github issue 261)</li>
+<li>lavPredictY() did not work properly when newdata= was used, and meanstructure = FALSE; in addition, the columns in the output could be in the wronger order if the order of ynames was different than the order of lavNames() (see github issue 259)</li>
+<li>the NACOV and WLS.V matrices (if provided as arguments) naively assume that the internal order of the observed variables is the same as the order of the sample statistics (see github issue 260)</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-12" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-12">Version 0.6-12</h5>
+<ul>
+<li>Released on CRAN: 4 July 2022</li>
+<li>New features and user-visible changes:
+<ul>
+<li>twolevel SEM now also supports conditional.x = TRUE</li>
+<li>out &lt;- summary(fit) is now completely silent (i.e., nothing is printed); out contains a list with ingredients (github issue 193)</li>
+<li>parameterEstimates() gains boot.ci.type = “bca” (for the single-group setting only, for now)</li>
+<li>syntax: allow for partial specifications of thresholds (github issue 215)</li>
+<li>lavaanify() gains a nthresholds= argument (see github issue 214)</li>
+<li>when bootstrapping is used, a warning is printed informing the user how many solutions were not admissible (see github issue 235)</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>standardizedSolution() did not work if representation = “RAM”</li>
+<li>iseed did not work properly in bootstrapLavaan() and other bootstrap routines</li>
+<li>the sam() function did not work (any longer) with categorical data</li>
+<li>the scaled (difference) mean-and-variance adjusted test statistic is wrong in the case of multiple groups involving equality constraints</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-11" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-11">Version 0.6-11</h5>
+<ul>
+<li>Released on CRAN: 31 March 2022</li>
+<li>New features and user-visible changes:
+<ul>
+<li>this is (again) only a maintenance release to prepare for R 4.2</li>
+<li>new option ceq.simple; when set to TRUE, a more compact representation is used in the parameter table if only simple equality constraints are used; the default is FALSE (for now)</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>ridge= option did not work properly</li>
+<li>df counting bug when nlevels &gt; 1L, ngroups &gt; 1L and fixed.x = TRUE</li>
+<li>EPC decisions were not based on the absolute value (pull request 231)</li>
+<li>name clash between ‘cl’ argument and ‘cluster’ argument</li>
+<li>interaction terms defined by a colon (a:b) were included in lavNames(,“ov.x”) even if either a or b is a dependent variable</li>
+<li>standardizedSolution() did not work if representation = “RAM”</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-10" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-10">Version 0.6-10</h5>
+<ul>
+<li>Released on CRAN: 25 January 2022</li>
+<li>New features and user-visible changes:
+<ul>
+<li>this is a maintenance release, with mostly minor changes under the hood (the github issues &gt;214 were not yet addressed in this release)</li>
+<li>initial support for representation = “RAM”</li>
+<li>better starting values for regression coefficients, when all variables are observed</li>
+<li>sam(): an indicator can now also be a predictor in the structural part</li>
+<li>estimator DLS: allow for non-positive Gamma, and allow sample.cov.rescale to be set by the user</li>
+<li>new rotation criteria: bi-quartimin and bi-geomin</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>if all data is missing for a pair of variables, the degrees of freedom should be adapted</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-9" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-9">Version 0.6-9</h5>
+<ul>
+<li>Released on CRAN: 27 June 2021</li>
+<li>New features and user-visible changes:
+<ul>
+<li>the sam() function is now public</li>
+<li>initial support for multilevel + missing = “ml”; only for estimator = “ML” (not “MLR”)</li>
+<li>if missing = “two-stage”, h1.information is now always set to “unstructured”</li>
+<li>group.w.free = TRUE now also works for DWLS/WLS/WLSMV estimators</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>multilevel+missing=“ml” did not work if there was only 1 variabele on the within level</li>
+<li>see github issues &gt;214</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-8" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-8">Version 0.6-8</h5>
+<ul>
+<li>Released on CRAN: 10 March 2021</li>
+<li>New features and user-visible changes:
+<ul>
+<li>new estimator = “DLS” for distributionally-weighted least squares (see Du, H., &amp; Bentler, P.M. (in press). Distributionally-weighted least squares in structural equation modeling. Psychological Methods.)</li>
+<li>new optimizer: optim = “GN” provides Gauss-Newton optimization</li>
+<li>group.w.free = TRUE now also works in the categorical case</li>
+<li>the information=, observed.information= and h1.information= arguments now accept a vector of two elements, eg information = c(“observed”, “expected”); the first entry is used for the standard errors, while the second entry is used for the test statistic</li>
+<li>new arguments omega.information=, omega.h1.information=, omega.information.mean=, and omega.h1.information.meat= allow for even more variants of various robust test statistics</li>
+<li>test = “yuan.bentler” now always uses observed.information = “h1” (if information is observed) and omega.h1.information = “unstructured”</li>
+<li>lavResiduals() has a new output = “table” argument</li>
+<li>rotations.se = “bordered” per default (only used when rotation is used)</li>
+<li>in a multiple group analysis, a single modifier is always recycled accross; this is now also true for labels (with a warning, unless group.equal= is used)</li>
+</ul></li>
+<li>Known issues:
+<ul>
+<li>same as 0.6-1</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>standardizedSolution() did not show labels (if any)</li>
+<li>lavResiduals() gave wrong results when the solution was rotated</li>
+<li>lav_mvnorm_missing_h1.R sometimes failed to produce starting values (and stopped with an error)</li>
+<li>a check to force the (co)variance matrix of standardized parameters to be positive definite was too strict (and is now omitted)</li>
+<li>lavTestLRT + satorra2002 + A.method = “exact” did not work when equality constraints were involved (github issue 211)</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-7" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-7">Version 0.6-7</h5>
+<ul>
+<li>Released on CRAN: 31 July 2020</li>
+<li>New features and user-visible changes:
+<ul>
+<li>latent ~~ observed formulas are now supported; the observed variables are automatically upgraded to (single-indicator) latent variables</li>
+<li>new option check.lv.names: when set to FALSE, lavaan proceeds even if it detects that some latent variable names occur in the dataset</li>
+<li>optimization is made somewhat more robust: if a first attempt fails (no convergence) three additional attempts are made (with optim.parscale= “standardize”, with start = “simple”, and with the combination optim.parscale = “standardized” and start = “simple”)</li>
+<li>the second argument of lavPredict() is now newdata (instead of type), to be consistend with predict()</li>
+</ul></li>
+<li>Known issues:
+<ul>
+<li>same as 0.6-1</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>fitMeasures() did not longer work for estimator = “PML”</li>
+<li>lavPredict + newdata + categorical did not work</li>
+<li>lavCor() did not listen to the missing = “fiml” argument</li>
+<li>lavPredict + Bartlett + missing: if all indicators of a factor are missing, the factor score was 0 (should be NA)</li>
+<li>block syntax for groups was no longer working</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-6" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-6">Version 0.6-6</h5>
+<ul>
+<li>Released on CRAN: 13 May 2020</li>
+<li>New features and user-visible changes:
+<ul>
+<li>lavPredict() + se = TRUE now works correctly in the presence of missing data and missing = “fiml”</li>
+<li>lavResiduals() + summary = TRUE now provides confidence intervals and better labelling</li>
+<li>lavResiduals() + summary = TRUE now works for categorical data, but only in models without exogenous covariates (for now)</li>
+<li>lavCor() gains cor.smooth= argument to force the correlation matrix to be positive definite</li>
+<li>sum(sampling.weights) no longer needs to equal the total sample size</li>
+<li>sampling.weights can now be used in combination with categorical data and estimator WLSMV and friends</li>
+<li>information/h1.information/observed.information arguments now accept a vector of two elements: the first one is for the standard errors, the second for the test statistic</li>
+<li>the data (provided by the data= argument) is now always converted to a data.frame (in case it is a tibble, or another class that inherits from data.frame)</li>
+<li>experimental feature: when the sample size is (very) small, adding the argument bounds = TRUE may stabilize estimation, by automatically choosing upper and lower bounds for several sets of model parameters</li>
+</ul></li>
+<li>Known issues:
+<ul>
+<li>same as 0.6-1</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>lavPredict + method=“Bartlett” + fsm=TRUE failed</li>
+<li>lavPredict + newdata failed if newdata contained a single observation</li>
+<li>parallel= option did not work in boostrapLavaan()</li>
+<li>standardizedSolution + type = “std.lv” failed</li>
+<li>missing = “ml” (or “fiml”) + sampling.weights failed</li>
+<li>lavaan:::fsr() failed, unless missing = “listwise” was given explicitly</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-5" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-5">Version 0.6-5</h5>
+<ul>
+<li>Released on CRAN: 28 Aug 2019</li>
+<li>New features and user-visible changes:
+<ul>
+<li>a new option `effect.coding’ can be used to scale the latent variables; a typical use is effect.coding = “loadings”, or effect.coding = c(“loadings”, “intercepts”); if “loadings” is included, equality constraints are used so that the average of the factor loadings (per latent variable) equals 1; if “intercepts” is included, equality constraints are used so that the sum of the intercepts (belonging to the indicators of a single latent variable) equals zero; as a shortcut, you can also set effect.coding = TRUE, which implies effect.coding = c(“loadings”, “intercepts”); note that his may not work well with bifactor models, or any other type of model where items depend on multiple factors</li>
+<li>summary(fit, nd = 4) now shows 4 digits (after the decimal point) for all (non-integer) numbers, including the header; the header has been re-arranged slightly: the estimator is now shown on the top; the test statistic(s) are now in a section ‘Model Test User Model:’</li>
+<li>the test= argument now accepts a vector of multiple test statistics, for example test = c(“satorra.bentler”, “mean.var.adjusted”)</li>
+<li>parameterEstimates(), standardizedSolution() and fitMeasures() have a new output= argument which can be set to “text” for pretty printing</li>
+</ul></li>
+<li>Known issues:
+<ul>
+<li>same as 0.6-1</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>in the categorical setting (estimator U/WLSMV) + missing = “pairwise” + the number of thresholds is larger than one: some entries in the weight matrix are not correct, resulting in (small) bias for some parameters</li>
+<li>optim.method=“none” is ignored in nlminb.constr() settings; as a side-effect, this produces wrong results in lavTestLRT() if method=“satorra.bentler.2010”, and explicit inequality constraints are used in the model</li>
+<li>wrong labels for lavInspect(,“lv.mean”) and lavInspect(,“cov.all”) if both formative and reflexive latent variables are used</li>
+<li>the “&lt;~” operator did not work well in the categorical setting in combination with conditional.x = TRUE</li>
+<li>parameterEstimates + fmi = TRUE often gives crazy results</li>
+<li>lavTestLRT + MLR + df=0 for one of the models results in an error</li>
+<li>estimator = “WLS” + continuous data + missing = “pairwise” does not work</li>
+<li>loglikelood value if fixed.x = TRUE and only sample statistics are provided is still reflecting the joint loglikelihood</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-4" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-4">Version 0.6-4</h5>
+<ul>
+<li>Released on CRAN: 3 July 2019</li>
+<li>New features and user-visible changes:
+<ul>
+<li>this release includes mostly changes under the hood</li>
+<li>an extra check is done for convergence (even if the optimizer claims convergence): we check if all the elements of the (unscaled) gradient are smaller than 0.0001 (in absolute value). If not, we set converged = FALSE. The tolerance value 0.0001 can be changed by the option optim.dx.tol. To switch off this check, use optim.dx.tol = +Inf</li>
+<li>lavInspect() gains new options: “vcov.def.joint” (and standardized variants) to give the (joint) variance-covariance matrix of both the free and `defined’ (using the := operator) variables; “loglik.casewise” to extract casewise (log)likelihood values (only if ML has been used); “h1.information” to extract the information matrix of the unrestricted h1 model</li>
+<li>lavTestScore() + uni table and modindices() output (in particular epc and epv values) are now more alike</li>
+<li>lavPredict() + Bartlett now uses FIML to compute factor scores (in the presence of missing data); new append.data= argument cbinds factor scores and raw data; if assemble = TRUE, factor scores of multiple groups will be joined in a single data.frame (with a group column); accept newdata= argument, even if sample statistics were used when fitting the original model</li>
+<li>using ordered = TRUE implies all variables should be treated as ordinal</li>
+<li>new logical arguments orthogonal.y and orthogonal.x can be used to specify zero covariances between endogenous and exogenous latent variables (only) respectively</li>
+<li>new option sampling.weights.normalization (set to “total” by default)</li>
+<li>group.equal now also accepts “composite.loadings” when the “&lt;~” operator is used</li>
+<li>parameterEstimates() gains a remove.nonfree= argument</li>
+<li>initial (but still experimental and undocumented) support for rotation, EFA, and ESEM (contact me if you wish to test this)</li>
+<li>initial (but still experimental and undocumented) support for the `Structural After Measurement’ (SAM) approach (see the new lavaan:::sam() function; contact me if you wish to test this)</li>
+</ul></li>
+<li>Known issues:
+<ul>
+<li>same as 0.6-1 (although many long standing github issues have been resolved)</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>twolevel models: standard errors are off for fixed effects (only) if the model contains a regression of the form y ~ x, both variables are observed, and x is not centered</li>
+<li>twolevel models: the chi-square test statistic for the baseline model is wrong (too low): the chi-square test statistic for the full model was substracted; therefore, if the user model fitted really bad, the baseline test statistic was too low; if the user model fitted reasonably well, there was (almost) no impact on the CFI/TLI fit measures</li>
+<li>lavPredict(): labels were wrong in the multigroup twolevel case</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-3" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-3">Version 0.6-3</h5>
+<ul>
+<li>Released on CRAN: 22 September 2018</li>
+<li>New features and user-visible changes:
+<ul>
+<li>new function lavResiduals() provides raw and standardized residuals in addition to summary statistics (rmr, srmr and crmr, including their standard error, a test for exact fit, and an unbiased version); for continuous data only (single-level, conditional.x = FALSE)</li>
+<li>new option missing = “ml.x” or missing = “fiml.x” will not delete cases with missing values on exogenous covariates, even if fixed.x = TRUE (this restores the behavior of &lt; 0.6); this can be useful for models with a large number of exogenous covariates, which you can treat as stochastic, but where fixed.x = TRUE is just more convenient</li>
+<li>lavInspect/lavTech + “sampstat” now always returns the data summaries from the h1 slot; this implies that if data is missing, and missing = “(fi)ml)”, you get the ‘EM’ estimated covariance matrix and mean vector (instead of the pairwise deleted covariance matrix from the samplestats slot)</li>
+<li>lavInspect/lavTech + “sampstat” and “implied” no longer return the mean vector if meanstructure = FALSE</li>
+<li>srmr_bollen is renamed crmr in the output of fitMeasures(), and does no longer count the (zero) diagonal elements when taking the average</li>
+<li>if conditional.x = TRUE, the baseline model will now set the slopes free (instead of fixing them to zero); this will usually result in a much better fit for the baseline model, and a less optimistic value for CFI/TLI and friends; to get back the old behaviour, set the option ‘baseline.conditional.x.free.slopes’ to FALSE</li>
+</ul></li>
+<li>Known issues:
+<ul>
+<li>same as 0.6-1</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>mimic = “Mplus” was no longer setting meanstructure = TRUE</li>
+<li>if a partable was provided as input (instead of model syntax), the `y’ variables were identified by using lavNames(fit, “ov.y”) instead of lavNames(fit, “ov.nox”); therefore, we ‘missed’ some variables in lav_dataframe_check_ordered(), not (automatically) treating them as ordered</li>
+<li>mimic = “EQS” was not setting all the correct settings any longer</li>
+<li>lavPredict() + Bartlett + missing data did not produce ‘true’ FIML factor scores (although they were very close)</li>
+<li>lav_partable_merge() did not set the group/level column right, affecting lavTestLRT() when method = “SatorraBentler2010” (producing a warning that the optimizer could not find a solution, and no test statistic)</li>
+<li>when a second-order factor was included in the model, the summary output did not print a dot (‘.’, to indicate endogenous) in front of the (residual) variances of the first-order latent variables</li>
+<li>lavTestLRT() + Satorra2000 with two models having the same df resulted in a strange error</li>
+<li>lavTestScore() + uni resulted in epc values with the wrong sign; as a result, the epv values were in the wrong direction</li>
+<li>lavaanList() produced “nlev too low for some vars” error, when ordered variables were involved that included missing values (NA) (the NA was counted as an additional category)</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-2" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-2">Version 0.6-2</h5>
+<ul>
+<li>Released on CRAN: 16 July 2018</li>
+<li>New features and user-visible changes:
+<ul>
+<li>cluster-robust standard errors are reported when the cluster= argument is used in combination with a standard single-level syntax (without the “level:” keywords); this can be used in combination with missing = “fiml” (to handle missing values) and sampling weights</li>
+<li>added lower() and upper() modifiers in the model syntax; it works in a similar way as the start() modifier to provide starting values; for example, to force a variance (say, y1 ~~ y1) to be larger than 0.001, you can now write y ~~ lower(0.001)*y1</li>
+<li>even if the optimizer claims to have found a solution, we check if the gradient is (almost) zero, and warn if not; this check can be turned on/off by the option check.gradient = TRUE/FALSE</li>
+<li>more effort is done to check if the model is identified in the presence of equality constraints; a warning is given if vcov is (nearly) singular; this check can be turned on/off by the option check.vcov = TRUE/FALSE</li>
+<li>header of the summary() function now shows the optimizer, the number of free parameters, and the number of constraints (if any)</li>
+<li>fabin3 starting values for factor loadings are now also computed if std.lv = TRUE</li>
+</ul></li>
+<li>Known issues:
+<ul>
+<li>same as 0.6-1</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>ifi.scaled fit measure was not scaled</li>
+<li>lavTables() did not work if the first argument was a data.frame</li>
+<li>two-level + optim.method = “em” resulted in an error (about the check argument)</li>
+<li>modindices() did not work if conditional.x = TRUE</li>
+<li>lavInspect(, “data”) did not return covariates if conditional.x = TRUE</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.6-1" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.6-1">Version 0.6-1</h5>
+<ul>
+<li>Released on CRAN: 22 May 2018</li>
+<li>New features and user-visible changes:
+<ul>
+<li>initial support for two-level SEM with random intercepts; see example(Demo.twolevel)</li>
+<li>initial support for sampling weights (for non-clustered data only for now)</li>
+<li>the code to compute (robust) standard errors and (robust) test statistics has been rewritten; the code is now much more consistent, but this may result in small changes in the values of some robust test statistics as printed in the output of summary(); a meanstructure is no longer added automatically when switching to a robust estimator</li>
+<li>conditional.x = FALSE now works in the categorical case (both with estimators DWLS and PML)</li>
+<li>if fixed.x = TRUE, we compute the loglikelihood without the exogenous covariates, and we do not allow for missing values in the exogenous covariates when missing = “ml” (and fixed.x = TRUE)</li>
+<li>estimator = “PML” now works for continuous-only data, or mixed continuous/ordinal data</li>
+<li>lavTestLRT(, method = “satorra2000”) which is the default when comparing models that were fitted with estimator MLMV or WLSMV now uses the so-called ‘delta’ method by default; this allows for comparing models that are nested in the covariance sense (and not just in the parameter sense); in addition, a scaled.shifted test statistic will be used by default</li>
+<li>the warning about empty cells in bivariate cells (when categorical data is used) is no longer shown</li>
+<li>many, many small changes under the hood</li>
+</ul></li>
+<li>Known issues:
+<ul>
+<li>two-level SEM: no random slopes, no missing data, no categorical data</li>
+<li>the marginal ML infrastructure (estimator = “MML”) has not been updated yet</li>
+<li>several github issues have not been resolved yet</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>robust CFI/TLI and robust RMSEA values are printed as NA when estimator = “MLR”</li>
+<li>lavPredict(, level = 2) does not handle phantom latent variables properly</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© CC-By the graphicaLavaan project, 2023</div>   
+    <div class="nav-footer-right">This page is built with <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

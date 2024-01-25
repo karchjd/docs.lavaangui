@@ -1,0 +1,25 @@
+---
+title: Changing Diagram Appearance
+---
+
+There are multiple approaches to change the appearance of the path diagram.
+
+## Moving Nodes
+
+First, you can manually move nodes by dragging them around with your mouse. To reposition the entire graph, click on an empty space and drag the graph around with your mouse. Alternatively, you can use the arrows at the top left corner of the `Model Window`. To select multiple nodes for dragging, press `CTRL`. This activates a selection rectangle. You can also hold `CTRL` while clicking on multiple nodes to select them all.
+
+## Automatic Layouts
+
+You can apply automatic layouts to your path diagram via the `Apply Layout` menu. The first two options should yield good results for a variety of models. If you dislike the changes a layout applied, you can undo them by pressing `CTRL+Z`. I recommend starting with one of the two suggested layouts and then fine-tuning the diagram manually.
+
+## Changing Variance Arrows
+
+`lavaangui` attempts to automatically find optimal positions for variance arrows to avoid overlap with other arrows. However, this may not yield satisfactory results for all models. You can manually position a variance loop through its context menu (`Change/Fix Loop Orientation`). Similarly, you can free the loop orientation (`Free Loop Orientation`) to allow `lavaangui` to automatically seek the best orientation again.
+
+## Changing Covariance Arrows
+
+Covariance arrows appear as curved arrows. To improve their appearance, you may need to alter the curvature of an arrow (making it straighter or more curved). This can be done by right-clicking on an undirected arrow and selecting `Change Curvature`.
+
+## Zooming
+
+Zoom in or out of the diagram using your mouse wheel or laptop trackpad. Alternatively, use the zoom slider in the top left corner of the `Model Window`. The button between the zoom sliders and the moving arrows automatically adjusts the zoom level so that the diagram fills the entire `Model Window`.

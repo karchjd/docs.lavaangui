@@ -1,0 +1,59 @@
+---
+title: "Contribute"
+format: html
+sidebar: false
+---
+
+## Feature Requests
+
+An easy way to contribute is to request a new feature that you need for your work. To do this, please use [https://github.com/karchjd/lavaangui/issues](https://github.com/karchjd/lavaangui/issues).
+
+## Bug Reports
+
+Similarly, if you find a bug, please also provide a bug report at [https://github.com/karchjd/lavaangui/issues](https://github.com/karchjd/lavaangui/issues).
+
+## Contribute Code
+
+Since `lavaangui` is open-source, everybody is invited to work on `lavaangui`. You can contribute as usual, via pull requests.
+
+## Tech Stack
+
+While to a user `lavaangui` looks like any other shiny app, its Tech Stack is substantially more complicated than a typical shiny app. Below, I list the main technologies used for potential contributors:
+
+### Frontend:
+
+- Javascript + HTML + CSS: The front-end of `lavaangui` is entirely written in HTML, Javascript, and CSS. There is no R code in the front-end.
+- [Svelte](https://svelte.dev/): The frontend framework employed for its reactive programming capabilities, reusable components, state management, etc.
+- [Cytoscape.js](https://js.cytoscape.org/): The graph library enabling all graph interactions.
+- [Bootstrap 3](https://getbootstrap.com/docs/3.3/): Responsible for the visual style and chosen because it is also employed by shiny.
+
+### Backend:
+
+The backend is rather small and entirely written in R, making server contributions relatively straightforward.
+
+### Testing and Deployment:
+
+- [Playwright](https://playwright.dev/) for (end-to-end) testing.
+- [GitHub Actions](https://github.com/features/actions) for CI/CD.
+
+### Documentation:
+
+This website has been created with [quarto](https://quarto.org/docs/websites/).
+
+## Getting Started
+
+First, use GitHub to create a fork. Then, create a local clone of your repository.
+
+Install dependencies:
+
+- [Node.js](https://nodejs.org/en/)
+- R
+- Front-end dependencies: Run `npm run install` from a shell in the `src/` folder.
+- Back-end dependencies: Execute `devtools::install_local(dependencies = TRUE)` in R, with the working directory set to the root folder of the package.
+
+The file [https://github.com/karchjd/lavaangui/blob/main/dev/compile_restart_dev.R](https://github.com/karchjd/lavaangui/blob/main/dev/compile_restart_dev.R) compiles the front-end and starts the app locally in your browser.
+
+
+## Recommended IDEs
+
+For the frontend and the end-to-end tests, I have used [Visual Studio](https://code.visualstudio.com/) and for the backend [R Studio](https://posit.co/download/rstudio-desktop/).

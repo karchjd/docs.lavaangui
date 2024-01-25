@@ -1,0 +1,17 @@
+---
+title: Loading Data
+---
+
+## Loading Data
+
+To load data, navigate to `File > Load Data` in the `Main Menu`   and select the file that contains your data. Supported formats are `.xlsx`, `.sav`, `.rds`, and `.csv`. Ensure that your data file contains a table of data. 
+
+If you just want to try `lavaangui`, you can use [cfa.csv](./cfa.csv). This is a 'classical' dataset commonly used in many papers and books on structural equation modeling. See the [lavaan tutorial](https://lavaan.ugent.be/tutorial/cfa.html) for more information.
+
+Currently, your `.csv` file must have the same format as [cfa.csv](./cfa.csv). That is, the first row must contain variable names, columns are separated by `,`, and the decimal delimiter is `.`.
+
+## Data Editor
+
+After loading the data, we recommend checking that the data has been loaded correctly. For this, go to the `Data Editor`. You can reach it via `File > Data Editor`. In the `Data Editor`, you will see a table describing your data. Verify that these summary statistics align with your expectations, particularly for the variables you intend to model.
+
+Much like lavaan, `lavaangui` identifies observed variables in your model by their names. Thus, please make sure to rename the variables you intend to model such that they have the desired names. You can accomplish this within the `Data Editor` by altering the variable names. The change will be immediate. There is no need to confirm this.

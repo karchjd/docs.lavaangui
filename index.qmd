@@ -1,47 +1,83 @@
 ---
-title: "About lavaan"
+title: "lavaangui"
 format: html
+sidebar: false
 ---
 
-### News:
-
-- (pinned): please consider a [donation](https://lavaan.ugent.be/donate.html) for the lavaan project.
-- (12 Sept 2023): the lavaan.org website is now using [quatro](https://quarto.org/) (thanks to Luc De Wilde)
-- (19 July 2023): lavaan version 0.6-16 has been released on [CRAN](https://cran.r-project.org/web/packages/lavaan/). See [Version History](http://lavaan.ugent.be/history/dot6.html) for more information. This is just a maintenance release.
-
-### What is lavaan?
-
-The lavaan package is developed to provide useRs, researchers and teachers a free open-source, but commercial-quality package for latent variable modeling. You can use lavaan to estimate a large variety of multivariate statistical models, including path analysis, confirmatory factor analysis, structural equation modeling and growth curve models.
-
 ::: callout-tip
-## The official reference to the lavaan package is the following paper:
-
-Yves Rosseel (2012). lavaan: An R Package for Structural Equation Modeling. *Journal of Statistical Software*, 48(2), 1-36. URL <http://www.jstatsoft.org/v48/i02/>
+lavaangui is currently still under development. Thus, please do not use it yet.
 :::
 
-### First impression
 
-To get a first impression of how lavaan works in practice, consider the following example of a SEM model. The figure below contains a graphical representation of the model that we want to fit.
-![](/figures/sem.png){fig-alt="lavaan example" width="70%"}
+The `lavaangui` package provides a free, open-source graphical user interface for the [lavaan](https://lavaan.org/) package. The core feature is that models can be specified by drawing path diagrams and fitted models visualized via interactive path diagrams.
 
-This is the corresponding lavaan model syntax:
-```{r, eval=FALSE}
-myModel <- ' 
- # latent variables 
-   ind60 =~ x1 + x2 + x3 
-   dem60 =~ y1 + y2 + y3 + y4 
-   dem65 =~ y5 + y6 + y7 + y8 
- # regressions
-   dem60 ~ ind60 
-   dem65 ~ ind60 + dem60 
- # residual covariances 
-   y1 ~~ y5
-   y2 ~~ y4 + y6 
-   y3 ~~ y7 
-   y4 ~~ y8
-   y6 ~~ y8
-'
-fit <- sem(model = myModel, 
-           data = PoliticalDemocracy) 
-summary(fit)
+There are multiple ways to use the `lavaangui` package.
+
+1.  **Web application:** The easiest is visit <https://solo-fsw.shinyapps.io/lavaangui/> and use it as a web application. This requires no additional software besides a web browser. The main downside of this is that the webserver is likely slower than your computer. So, fitting complicated models might take a long time.
+
+2. **Local web application:** After installing the  `lavaangui` package (see below), you can start a local version of the web application via the `start_gui()` command.
+
+3. **Interactive plots:** `lavaangui` can also be used for plotting `lavaan` models that were created in R. For this, use `plot_interactive(fit)`. This will create a path diagram of your model. The core difference compared to other packages for plotting `lavaan` models is that the resulting plot is interactive. That is, you can change its appearance easily, for example, by dragging around nodes with your mouse.
+
+
+::: callout-tip
+# The official reference for the lavaangui package is as follows:
+Karch, J. D., (2024). *lavaangui: Graphical User Interface  for lavaan.* R package. <https://github.com/karchjd/lavaangui>
+:::
+
+# Getting Started
+
+## Web application
+
+For the web application, no installation is necessary. Simply go to <https://solo-fsw.shinyapps.io/lavaangui/>. The web application requires a modern browser. It is continuously being tested on Chrome, Firefox, and Edge, which I thus recommend. It unfortunately does not work with Safari due to Apples reluctance to support many modern web features. 
+
+## R Package
+
+### Installation
+
+You can install the latest version of the R package via the following commands.
+
+```{r, eval = FALSE, echo = TRUE}
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
+remotes::install_github("karchjd\lavaangui")
+```
+
+You will also need a modern web browser, which typically should already be installed on your system. However, note that Safari is not supported, as explained earlier.
+
+### `start_gui`
+
+You can start the `lavaangui` web application by typing 
+
+```{r, eval = FALSE}
+start_gui()
+```
+
+into your R console.
+
+Alternatively, you can also use the command `start_gui(fit)`, where `fit` is any supported fitted lavaan object. This will initialize the web application with the model and data contained in fit. For example, the following code initializes the web application with a three factor model.
+
+```{r, eval = FALSE}
+library(lavaan)
+HS.model <- ' visual  =~ x1 + x2 + x3
+              textual =~ x4 + x5 + x6
+              speed   =~ x7 + x8 + x9 '
+
+fit <- cfa(HS.model, data = HolzingerSwineford1939)
+start_gui(fit)
+```
+
+### `plot_interactive`
+
+To obtain an interactive plot of your fitted model, use the `plot_interactive(fit)` function:
+
+```{r, eval = FALSE}
+library(lavaan)
+HS.model <- ' visual  =~ x1 + x2 + x3
+              textual =~ x4 + x5 + x6
+              speed   =~ x7 + x8 + x9 '
+
+fit <- cfa(HS.model, data = HolzingerSwineford1939)
+plot_interactive(fit)
 ```

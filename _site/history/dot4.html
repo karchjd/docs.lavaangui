@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>lavaan.org - 0.4 series</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">lavaan.org</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">About graphicaLavaan</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../tutorial/before.html" aria-current="page">
+ <span class="menu-text">Tutorial</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../contribute.html">
+ <span class="menu-text">Contribute</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">0.4 series</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/before.html" class="sidebar-item-text sidebar-link">Before you start</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/loading_data.html" class="sidebar-item-text sidebar-link">Loading Data</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  tutorial/model_specfication.qmd
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/fitting.html" class="sidebar-item-text sidebar-link">Model Fitting</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/result.html" class="sidebar-item-text sidebar-link">Inspecting Results</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/appearance.html" class="sidebar-item-text sidebar-link">Changing Graph Appearance</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">0.4 series</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="version-0.4-14" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.4-14">Version 0.4-14</h5>
+<ul>
+<li>Released on CRAN: 11 May 2012</li>
+<li>New features/changes:
+<ul>
+<li>this is a maintenance release, to go along with the official publication of the ‘lavaan’ paper in the Journal of Statistical Software (volume 48)</li>
+<li>citation(“lavaan”) will provide correct citation information</li>
+<li>internal slot <span class="citation" data-cites="User">@User</span> has been renamed <span class="citation" data-cites="parTable">@parTable</span></li>
+<li>internal slot <span class="citation" data-cites="Sample">@Sample</span> has been renamed <span class="citation" data-cites="SampleStats">@SampleStats</span></li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>a bug (introduced in 0.4-12) resulted in wrong derivatives for the PSI matrix; this may affect some SEs for models with more than 2 latent factors (or more than 2 observed dependent variables, since they are converted to latents) (bug reported by Mijke Rhemtulla)</li>
+<li>when estimator=“(fi)ml”, estimation may fail for saturated models (e.g.&nbsp;univariate regression models); workaround: use fixed.x=FALSE</li>
+<li>univariate regression where intercept is explicitly included in the model syntax sometimes returns the parameters in the wrong order</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.4-13" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.4-13">Version 0.4-13</h5>
+<ul>
+<li>Released on CRAN: 10 April 2012</li>
+<li>New features/changes:
+<ul>
+<li>this is a maintenance release, mainly reorganizing internal code</li>
+<li>bootstrapLavaan() and bootstrapLRT() functions gain a type=“yuan” method; contributed by Ed Merkle</li>
+<li>parameterEstimates() will add an ‘fmi’ column containing the fraction of missing information if missing=“fiml”; suggested by Mijke Rhemtulla</li>
+<li>improved check for linear constraints</li>
+<li>updated versions of InformativeTesting() and related functions</li>
+<li>parseModelString() is now exported</li>
+<li>lavaan now requires R version 2.14.0 or higher</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>defined parameters (created using the “:=” operator) are not standardized in the Std.lv and Std.all columns</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.4-12" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.4-12">Version 0.4-12</h5>
+<ul>
+<li>Released on CRAN: 2 February 2012</li>
+<li>New features/changes:
+<ul>
+<li>bootstrapLavaan() uses a generic FUN argument to extract any type of information from a fitted lavaan object</li>
+<li>bootstrapLRT() gains a calibrate argument to switch on a double (nested) bootstrap</li>
+<li>both bootstrapLavaan() and bootstrapLRT() functions have support for the parallel package</li>
+<li>simulateData() gains a skewness and kurtosis argument to simulate nonnormal multivariate data</li>
+<li>new function InformativeTesting() for testing order restricted hypothesis; contributed by Leonard Vanbrabant</li>
+<li>initial support for a new operator “&lt;~” to specify formative constructs (composites)</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>bootstrapLRT() with type=“bollen.stine” and multiple groups is broken</li>
+<li>bollen.stine plus mean structure used sample.mean instead of Mu.hat for the transformation</li>
+<li>if data is deleted listwise, summary() does not show the ‘Total’ (original) number of observations</li>
+<li>parameters for composites defined by the &lt;~ operator are not standardized, even if standardized=TRUE</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.4-11" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.4-11">Version 0.4-11</h5>
+<ul>
+<li>Released on CRAN: 21 December 2011</li>
+<li>New features/changes:
+<ul>
+<li>parametric bootstrap, see bootstrapLavaan() function</li>
+<li>simulateData() to generate data starting from a lavaan model syntax</li>
+<li>getCov() function to easily read in the lower triangular elements of a covariance matrix</li>
+<li>new operator “:” to allow for different models for different groups</li>
+<li>there is no need to use the ‘label()’ and ‘equal()’ modifiers anymore; in multiple groups, labels can</li>
+<li>be provided as follows: c(a1,a2,a3,a4)*x1 (no quotes needed!)</li>
+<li>models with only covariances and/or means (i.e.&nbsp;no “~” or “=~” operators) are now supported</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>bootstrapLavaan() with type=“parametric” only produces an error (in the CRAN version)</li>
+<li>sometimes, the optimizer (nlminb) falsely reports non-convergence if the fx is below .Machine$tol.eps</li>
+<li>modindices() with multiple groups is broken in 0.4-11</li>
+<li>estimator=“MLM” fails if data contains missing values (workaround: use na.omit() to remove missing cases or use estimator=“MLR”)</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.4-10" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.4-10">Version 0.4-10</h5>
+<ul>
+<li>Released on CRAN: 3 October 2011</li>
+<li>New features/changes:
+<ul>
+<li>mimic=“Mplus” is no longer the default; the default is mimic=“lavaan”</li>
+<li>added ‘start’ argument to control the way the starting values are chosen</li>
+<li>added ‘control’ argument to pass control parameters to the optimizer</li>
+<li>parameterEstimates() function always includes confidence intervals, and only standardized estimates if standardized=TRUE</li>
+<li>standardized estimates now come in three flavors: std.lv, std.all and std.nox</li>
+<li>se=“boot” or se=“bootstrap” provides bootstrap standard errors</li>
+<li>test=“bollen.stine” or test=“bootstrap” provides a p-value for the test statistic based on the Bollen-Stine bootstrap</li>
+<li>if data is missing, the h1 model is now estimated using the EM algorithm (instead of quasi-newton)</li>
+<li>new operator := for defining arbitrary (linear or nonlinear) functions of free parameters (eg ab := a*b where both a and b are labels of free parameters); standard errors are computed using the delta method</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>using multiple modifiers on intercepts [eg f ~ a<em>1 + start(1)</em>1] produces a syntax error</li>
+<li>upper CI RMSEA fails if RMSEA is zero but df &gt; 0</li>
+<li>the baseline model used by the lavaan() function (not the other fitting functions) is wrong if there were multiple groups and group equality constraints; this affects the CFI/TLI indices</li>
+<li>multiple group analyses with missing=“ml” has some convergence issues, due to a faulty group weight</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.4-9" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.4-9">Version 0.4-9</h5>
+<ul>
+<li>Released on CRAN: 15 June 2011</li>
+<li>New features/changes:
+<ul>
+<li>all bugs/glitches in 0.4-8 are fixed</li>
+<li>new starting values for factor loadings</li>
+<li>better scaling of free parameters in the optimization routine</li>
+<li>new modelCov() function to inspect the covariance matrix before analysis</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>if equality constraints are included in the model using the “==” operator, the df count is wrong</li>
+<li>in some cases, the combination of both within-group and between-group equality constraints produces errors</li>
+<li>if the argument missing=“ml” is used but the data does not contain any missings, the summary() function produces an error</li>
+<li>it was not allowed to specify a covariance using the “~~” operator where one element was an observed variable, and the other element a latent variable</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.4-8" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.4-8">Version 0.4-8</h5>
+<ul>
+<li>Released on CRAN: 24 April 2011</li>
+<li>New features/changes:
+<ul>
+<li>all bugs/glitches in 0.4-7 are fixed</li>
+<li>AIC, BIC and logLik use S4 generics from the stats4 package</li>
+<li>new lavaan-method ‘nobs()’ returns the total sample size used for the analysis</li>
+<li>additional options for the ‘group.equal’ argument</li>
+<li>new ‘anova()’ function to compare nested models using a (possibly scaled) chi-square difference test</li>
+<li>better internal scaling makes the optimizer (nlminb) more robust, if the data is badly scaled</li>
+<li>instead of using ‘label(“mylabel”)<em>x1’ to assign a parameter label, you can now use ’mylabel</em>x1’</li>
+<li>instead of using the ‘equal()’ modifier, you can now enforce equality constraints by using the same label for several parameters</li>
+<li>initial (and experimental) support has been added for general linear and nonlinear equality and inequality constraints</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>if the “group” variable in the data frame contained missing values, an additional group was added for those cases</li>
+<li>the parameter names in the group.partial argument were converted to lower caps; if some parameter names included capitals, the group.partial argument had no effect</li>
+<li>the NA* modifier is interpreted as a label, and is ignored (workaround: as.numeric(NA)* works)</li>
+<li>a bug in the code for the auto.single.fix argument (which is automatically set to TRUE in the cfa/sem/growth functions) produces the wrong model if indicators are shared by several latent variables (workaround: use the lavaan() function for these models)</li>
+</ul></li>
+</ul>
+</section>
+<section id="version-0.4-7" class="level5">
+<h5 class="anchored" data-anchor-id="version-0.4-7">Version 0.4-7</h5>
+<ul>
+<li>Released on CRAN: 21 Februari 2011</li>
+<li>New features/changes:
+<ul>
+<li>completely rewritten codebase (much smaller, more modular and much faster)</li>
+<li>improved parsing mechansism using the new function lavaanify()</li>
+<li>improved model syntax (multiple modifiers, multiple lhs elements, and more)</li>
+<li>MLM results are now identical to Mplus (except for fixed.x covariates)</li>
+<li>added MLF and MLR estimators</li>
+<li>new functions: standardizedSolution, parameterEstimates, modindices, fitMeasures, update, AIC, BIC, predict</li>
+<li>normalized and standardized residuals</li>
+<li>a new low-level function lavaan() has the ‘feature’ of doing nothing automagically</li>
+<li>measurement.invariance function has been renamed to measurementInvariance</li>
+<li>improved summary, reporting sample size and missingness information</li>
+<li>mimic.Mplus argument is replaced by a ‘mimic’ argument; can be set to “Mplus” (default) or “EQS”</li>
+<li>new argument ‘likelihood’ can be set to “wishart” or “normal” (for maximum likelihood estimation only)</li>
+<li>na.rm argument is replaced by a ‘missing’ argument; can be set to “listwise” (default) or “ml”</li>
+<li>group.constraints argument is replaced by a ‘group.equal’ argument; new argument ‘group.partial’ allows for partial equality constraints</li>
+<li>standard.errors argument is replaced by a ‘se’ argument’; new argument ‘test’ for choosing the test statistic new ‘fixed.x’ argument</li>
+<li>new argument ‘representation’ as a placeholder for the future</li>
+<li>in the standardized solutions, the (residual) covariances are now in a correlation metric</li>
+</ul></li>
+<li>Known issues for this release:
+<ul>
+<li>MLM value in models with fixed x covariates is (slightly) different in Mplus</li>
+<li>SRMR value is sometimes different in Mplus: if information is observed, if data is missing, and if equality constraints are used with multiple groups</li>
+<li>EPCs for equality constraints are not entirely correct (but almost)</li>
+</ul></li>
+<li>Bugs/glitches discovered after the release:
+<ul>
+<li>function modindices: sepc.all column contains value ‘Inf’ for all covariances; in a multiple group analysis, only the last group is shown</li>
+<li>rsquare labels in the summary output are sometimes in the wrong order</li>
+<li>internal function ‘vnames’ (called by function lavaanNames) with type ‘lv.x’ or ‘lv.y’ does not (always) return the names of the variables in the same order as for type ‘lv’</li>
+<li>function measurementInvariance(): the group.partial argument produces an error</li>
+<li>if the data contains cases where all variables are missing, these cases are silently removed from the data, but</li>
+<li>the total number of observations is not adjusted</li>
+<li>the logLik function returns a ‘df’ attribute (to be used in the AIC() function); this should be the number of free parameters, not (as in 0.4-7) the degrees of freedom of the model</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© CC-By the graphicaLavaan project, 2023</div>   
+    <div class="nav-footer-right">This page is built with <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

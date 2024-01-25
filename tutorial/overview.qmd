@@ -1,0 +1,42 @@
+---
+  title: Overview
+---
+  
+# solo-fsw.shinyapps.io/lavaangui/ or `start_gui()`
+
+If you start the app via `start_gui` or visit <https://solo-fsw.shinyapps.io/lavaangui/>, the app will look like shown in the picture below. The text below describes it's components. You can click on the image to enlarge it.
+
+[![Overview](overview.png)](overview.png)
+
+## Main Menu
+
+In the `Main Menu`, you can do most of the actions that are not directly related to specifying the model. This includes, loading and saving data or models, changing the settings of `lavaan`, changing how your model is displayed, applying layouts to your model and getting help.
+
+## Top Toolbar
+
+The most important function of the `Top Toolbar` is to enable you to create new variables by dragging the respective symbol into the model window. Besides this, it also displays which data set is currently loaded, and whether means are modeled or not.
+
+## Model Window
+
+In the `Model Window`, you specify your model and can inspect the estimated parameters as well as their p values and confidence intervals after you fitted your model.
+
+## Results Window
+
+After fitting a model, the `Results Window` shows results such as model fit indices. The results window is also used to display the `lavaan` script that corresponds to your model.
+
+## Message Area
+
+In the `Message Area`, you will get messages from the app such as warnings, error messages but also success messages.
+
+## Bottom Toolbar
+
+The `Bottom Toolbar` allows you to fit the model but also to show the full model as if it will be fitted by `lavaan` before fitting.
+
+# `plot_interactive`
+
+If you start the app from R via the `plot_interactive` function, it will display a windows directly in RStudio, which will look like shown in the picture below:
+
+[![Overview](plot_interactive.png)](plot_interactive.png)
+
+Since the purpose of `plot_interactive` is to only display a path diagram and not to modify or fit a model, it does not have many of the functionalities of `start_gui()`. This is also reflected by the fact that only the `Model Window` and a heavily reduce `Main Menu` is shown. You can however, still interactively [Change The Appearance](appearance.qmd), change what results are visualized via the [View Menu](result.qmd), and [export the path diagram](save.qmd)
+

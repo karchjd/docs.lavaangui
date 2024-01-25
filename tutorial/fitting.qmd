@@ -1,0 +1,19 @@
+---
+title: Model Fitting
+---
+
+## Show Full Model
+
+To fit a SEM, you first need to make sure that each observed variable in the model is linked with a variable in the data set. Before fitting the model, I recommend that you ensure that the model is exactly what you want. This is especially important for `lavaangui` because it automatically adds many arrows. So, the model you specify is almost always not the exactly the same model that is fitted by `lavaan`.
+
+To obtain the model `lavaan` will use, press on the `Show Full Model` button in the `Bottom Toolbar`. This will add all the arrows lavaan automatically adds to your model and fixes all parameters lavaan will fix. All arrows added or modified are displayed as dashed arrows.
+
+## Select Estimators
+
+Before fitting make sure to select the desired estimator, test statistic, and standard errors via the `Estimation` menu. In the estimation menu, you can also change how missing values are treated.
+
+## Fit Model
+
+When you are certain that the full model is the model you want to fit, press on the `Fit Model` button in the `Bottom Toolbar`. After succesfully fitting the model, the parameter estimates are automatically displayed in the model path diagram. Should the model fitting take too long, you can press on cancel to abort. 
+
+`lavaangui` caches parameter estimates. Thus, when you decide to fit a model again but did not change the model or the data, the model will actually not be fit again, but instead previously saved results will be used.
