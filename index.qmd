@@ -4,7 +4,7 @@ format: html
 sidebar: false
 ---
 
-::: callout-tip
+::: callout-important
 lavaangui is currently still under development. Thus, please do not use it yet.
 :::
 
