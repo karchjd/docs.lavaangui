@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "lavaangui",
+    "section": "",
+    "text": "Tip\n\n\n\nlavaangui is currently still under development. Thus, please do not use it yet.\nThe lavaangui package provides a free, open-source graphical user interface for the lavaan package. The core feature is that models can be specified by drawing path diagrams and fitted models visualized via interactive path diagrams.\nThere are multiple ways to use the lavaangui package."
+  },
+  {
+    "objectID": "index.html#web-application",
+    "href": "index.html#web-application",
+    "title": "lavaangui",
+    "section": "Web application",
+    "text": "Web application\nFor the web application, no installation is necessary. Simply go to https://solo-fsw.shinyapps.io/lavaangui/. The web application requires a modern browser. It is continuously being tested on Chrome, Firefox, and Edge, which I thus recommend. It unfortunately does not work with Safari due to Apples reluctance to support many modern web features."
+  },
+  {
+    "objectID": "index.html#r-package",
+    "href": "index.html#r-package",
+    "title": "lavaangui",
+    "section": "R Package",
+    "text": "R Package\n\nInstallation\nYou can install the latest version of the R package via the following commands.\n\nif (!requireNamespace(\"remotes\", quietly = TRUE)) {\n  install.packages(\"remotes\")\n}\nremotes::install_github(\"karchjd\\lavaangui\")\n\nYou will also need a modern web browser, which typically should already be installed on your system. However, note that Safari is not supported, as explained earlier.\n\n\nstart_gui\nYou can start the lavaangui web application by typing\n\nstart_gui()\n\ninto your R console.\nAlternatively, you can also use the command start_gui(fit), where fit is any supported fitted lavaan object. This will initialize the web application with the model and data contained in fit. For example, the following code initializes the web application with a three factor model.\n\nlibrary(lavaan)\nHS.model &lt;- ' visual  =~ x1 + x2 + x3\n              textual =~ x4 + x5 + x6\n              speed   =~ x7 + x8 + x9 '\n\nfit &lt;- cfa(HS.model, data = HolzingerSwineford1939)\nstart_gui(fit)\n\n\n\nplot_interactive\nTo obtain an interactive plot of your fitted model, use the plot_interactive(fit) function:\n\nlibrary(lavaan)\nHS.model &lt;- ' visual  =~ x1 + x2 + x3\n              textual =~ x4 + x5 + x6\n              speed   =~ x7 + x8 + x9 '\n\nfit &lt;- cfa(HS.model, data = HolzingerSwineford1939)\nplot_interactive(fit)"
+  }
+]
