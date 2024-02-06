@@ -18,6 +18,335 @@
     "href": "index.html#r-package",
     "title": "lavaangui",
     "section": "R Package",
-    "text": "R Package\n\nInstallation\nYou can install the latest version of the R package via the following commands.\n\nif (!requireNamespace(\"remotes\", quietly = TRUE)) {\n  install.packages(\"remotes\")\n}\nremotes::install_github(\"karchjd\\lavaangui\")\n\nYou will also need a modern web browser, which typically should already be installed on your system. However, note that Safari is not supported, as explained earlier.\n\n\nstart_gui\nYou can start the lavaangui web application by typing\n\nstart_gui()\n\ninto your R console.\nAlternatively, you can also use the command start_gui(fit), where fit is any supported fitted lavaan object. This will initialize the web application with the model and data contained in fit. For example, the following code initializes the web application with a three factor model.\n\nlibrary(lavaan)\nHS.model &lt;- ' visual  =~ x1 + x2 + x3\n              textual =~ x4 + x5 + x6\n              speed   =~ x7 + x8 + x9 '\n\nfit &lt;- cfa(HS.model, data = HolzingerSwineford1939)\nstart_gui(fit)\n\n\n\nplot_interactive\nTo obtain an interactive plot of your fitted model, use the plot_interactive(fit) function:\n\nlibrary(lavaan)\nHS.model &lt;- ' visual  =~ x1 + x2 + x3\n              textual =~ x4 + x5 + x6\n              speed   =~ x7 + x8 + x9 '\n\nfit &lt;- cfa(HS.model, data = HolzingerSwineford1939)\nplot_interactive(fit)"
+    "text": "R Package\n\nInstallation\nOnly Windows users first need to install Rtools. Then, you can install the latest version of the R package via the following commands.\n\nif (!requireNamespace(\"remotes\", quietly = TRUE)) {\n  install.packages(\"remotes\")\n}\nremotes::install_github(\"karchjd/lavaangui\")\n\nYou will also need a modern web browser, which typically should already be installed on your system. However, note that Safari is not supported, as explained earlier.\n\n\nstart_gui\nYou can start the lavaangui web application by typing\n\nstart_gui()\n\ninto your R console.\nAlternatively, you can also use the command start_gui(fit), where fit is any supported fitted lavaan object. This will initialize the web application with the model and data contained in fit. For example, the following code initializes the web application with a three factor model.\n\nlibrary(lavaan)\nHS.model &lt;- ' visual  =~ x1 + x2 + x3\n              textual =~ x4 + x5 + x6\n              speed   =~ x7 + x8 + x9 '\n\nfit &lt;- cfa(HS.model, data = HolzingerSwineford1939)\nstart_gui(fit)\n\n\n\nplot_interactive\nTo obtain an interactive plot of your fitted model, use the plot_interactive(fit) function:\n\nlibrary(lavaan)\nHS.model &lt;- ' visual  =~ x1 + x2 + x3\n              textual =~ x4 + x5 + x6\n              speed   =~ x7 + x8 + x9 '\n\nfit &lt;- cfa(HS.model, data = HolzingerSwineford1939)\nplot_interactive(fit)"
+  },
+  {
+    "objectID": "contribute.html",
+    "href": "contribute.html",
+    "title": "Contribute",
+    "section": "",
+    "text": "An easy way to contribute is to request a new feature that you need for your work. To do this, please use https://github.com/karchjd/lavaangui/issues."
+  },
+  {
+    "objectID": "contribute.html#feature-requests",
+    "href": "contribute.html#feature-requests",
+    "title": "Contribute",
+    "section": "",
+    "text": "An easy way to contribute is to request a new feature that you need for your work. To do this, please use https://github.com/karchjd/lavaangui/issues."
+  },
+  {
+    "objectID": "contribute.html#bug-reports",
+    "href": "contribute.html#bug-reports",
+    "title": "Contribute",
+    "section": "Bug Reports",
+    "text": "Bug Reports\nSimilarly, if you find a bug, please also provide a bug report at https://github.com/karchjd/lavaangui/issues."
+  },
+  {
+    "objectID": "contribute.html#contribute-code",
+    "href": "contribute.html#contribute-code",
+    "title": "Contribute",
+    "section": "Contribute Code",
+    "text": "Contribute Code\nSince lavaangui is open-source, everybody is invited to work on lavaangui. You can contribute as usual, via pull requests."
+  },
+  {
+    "objectID": "contribute.html#tech-stack",
+    "href": "contribute.html#tech-stack",
+    "title": "Contribute",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nWhile to a user lavaangui looks like any other shiny app, its Tech Stack is substantially more complicated than a typical shiny app. Below, I list the main technologies used for potential contributors:\n\nFrontend:\n\nJavascript + HTML + CSS: The front-end of lavaangui is entirely written in HTML, Javascript, and CSS. There is no R code in the front-end.\nSvelte: The frontend framework employed for its reactive programming capabilities, reusable components, state management, etc.\nCytoscape.js: The graph library enabling all graph interactions.\nBootstrap 3: Responsible for the visual style and chosen because it is also employed by shiny.\n\n\n\nBackend:\nThe backend is rather small and entirely written in R, making server contributions relatively straightforward.\n\n\nTesting and Deployment:\n\nPlaywright for (end-to-end) testing.\nGitHub Actions for CI/CD.\n\n\n\nDocumentation:\nThis website has been created with quarto."
+  },
+  {
+    "objectID": "contribute.html#getting-started",
+    "href": "contribute.html#getting-started",
+    "title": "Contribute",
+    "section": "Getting Started",
+    "text": "Getting Started\nFirst, use GitHub to create a fork. Then, create a local clone of your repository.\nInstall dependencies:\n\nNode.js\nR\nFront-end dependencies: Run npm run install from a shell in the src/ folder.\nBack-end dependencies: Execute devtools::install_local(dependencies = TRUE) in R, with the working directory set to the root folder of the package.\n\nThe file https://github.com/karchjd/lavaangui/blob/main/dev/compile_restart_dev.R compiles the front-end and starts the app locally in your browser."
+  },
+  {
+    "objectID": "contribute.html#recommended-ides",
+    "href": "contribute.html#recommended-ides",
+    "title": "Contribute",
+    "section": "Recommended IDEs",
+    "text": "Recommended IDEs\nFor the frontend and the end-to-end tests, I have used Visual Studio and for the backend R Studio."
+  },
+  {
+    "objectID": "tutorial/fitting.html",
+    "href": "tutorial/fitting.html",
+    "title": "Model Fitting",
+    "section": "",
+    "text": "To fit a SEM, you first need to make sure that each observed variable in the model is linked with a variable in the data set. Before fitting the model, I recommend that you ensure that the model is exactly what you want. This is especially important for lavaangui because it automatically adds many arrows. So, the model you specify is almost always not the exactly the same model that is fitted by lavaan.\nTo obtain the model lavaan will use, press on the Show Full Model button in the Bottom Toolbar. This will add all the arrows lavaan automatically adds to your model and fixes all parameters lavaan will fix. All arrows added or modified are displayed as dashed arrows."
+  },
+  {
+    "objectID": "tutorial/fitting.html#show-full-model",
+    "href": "tutorial/fitting.html#show-full-model",
+    "title": "Model Fitting",
+    "section": "",
+    "text": "To fit a SEM, you first need to make sure that each observed variable in the model is linked with a variable in the data set. Before fitting the model, I recommend that you ensure that the model is exactly what you want. This is especially important for lavaangui because it automatically adds many arrows. So, the model you specify is almost always not the exactly the same model that is fitted by lavaan.\nTo obtain the model lavaan will use, press on the Show Full Model button in the Bottom Toolbar. This will add all the arrows lavaan automatically adds to your model and fixes all parameters lavaan will fix. All arrows added or modified are displayed as dashed arrows."
+  },
+  {
+    "objectID": "tutorial/fitting.html#select-estimators",
+    "href": "tutorial/fitting.html#select-estimators",
+    "title": "Model Fitting",
+    "section": "Select Estimators",
+    "text": "Select Estimators\nBefore fitting make sure to select the desired estimator, test statistic, and standard errors via the Estimation menu. In the estimation menu, you can also change how missing values are treated."
+  },
+  {
+    "objectID": "tutorial/fitting.html#fit-model",
+    "href": "tutorial/fitting.html#fit-model",
+    "title": "Model Fitting",
+    "section": "Fit Model",
+    "text": "Fit Model\nWhen you are certain that the full model is the model you want to fit, press on the Fit Model button in the Bottom Toolbar. After succesfully fitting the model, the parameter estimates are automatically displayed in the model path diagram. Should the model fitting take too long, you can press on cancel to abort.\nlavaangui caches parameter estimates. Thus, when you decide to fit a model again but did not change the model or the data, the model will actually not be fit again, but instead previously saved results will be used."
+  },
+  {
+    "objectID": "tutorial/loading_data.html",
+    "href": "tutorial/loading_data.html",
+    "title": "Loading Data",
+    "section": "",
+    "text": "To load data, navigate to File &gt; Load Data in the Main Menu and select the file that contains your data. Supported formats are .xlsx, .sav, .rds, and .csv. Ensure that your data file contains a table of data.\nIf you just want to try lavaangui, you can use cfa.csv. This is a ‘classical’ dataset commonly used in many papers and books on structural equation modeling. See the lavaan tutorial for more information.\nCurrently, your .csv file must have the same format as cfa.csv. That is, the first row must contain variable names, columns are separated by ,, and the decimal delimiter is .."
+  },
+  {
+    "objectID": "tutorial/loading_data.html#loading-data",
+    "href": "tutorial/loading_data.html#loading-data",
+    "title": "Loading Data",
+    "section": "",
+    "text": "To load data, navigate to File &gt; Load Data in the Main Menu and select the file that contains your data. Supported formats are .xlsx, .sav, .rds, and .csv. Ensure that your data file contains a table of data.\nIf you just want to try lavaangui, you can use cfa.csv. This is a ‘classical’ dataset commonly used in many papers and books on structural equation modeling. See the lavaan tutorial for more information.\nCurrently, your .csv file must have the same format as cfa.csv. That is, the first row must contain variable names, columns are separated by ,, and the decimal delimiter is .."
+  },
+  {
+    "objectID": "tutorial/loading_data.html#data-editor",
+    "href": "tutorial/loading_data.html#data-editor",
+    "title": "Loading Data",
+    "section": "Data Editor",
+    "text": "Data Editor\nAfter loading the data, we recommend checking that the data has been loaded correctly. For this, go to the Data Editor. You can reach it via File &gt; Data Editor. In the Data Editor, you will see a table describing your data. Verify that these summary statistics align with your expectations, particularly for the variables you intend to model.\nMuch like lavaan, lavaangui identifies observed variables in your model by their names. Thus, please make sure to rename the variables you intend to model such that they have the desired names. You can accomplish this within the Data Editor by altering the variable names. The change will be immediate. There is no need to confirm this."
+  },
+  {
+    "objectID": "tutorial/appearance.html",
+    "href": "tutorial/appearance.html",
+    "title": "Changing Diagram Appearance",
+    "section": "",
+    "text": "There are multiple approaches to change the appearance of the path diagram."
+  },
+  {
+    "objectID": "tutorial/appearance.html#moving-nodes",
+    "href": "tutorial/appearance.html#moving-nodes",
+    "title": "Changing Diagram Appearance",
+    "section": "Moving Nodes",
+    "text": "Moving Nodes\nFirst, you can manually move nodes by dragging them around with your mouse. To reposition the entire graph, click on an empty space and drag the graph around with your mouse. Alternatively, you can use the arrows at the top left corner of the Model Window. To select multiple nodes for dragging, press CTRL. This activates a selection rectangle. You can also hold CTRL while clicking on multiple nodes to select them all."
+  },
+  {
+    "objectID": "tutorial/appearance.html#automatic-layouts",
+    "href": "tutorial/appearance.html#automatic-layouts",
+    "title": "Changing Diagram Appearance",
+    "section": "Automatic Layouts",
+    "text": "Automatic Layouts\nYou can apply automatic layouts to your path diagram via the Apply Layout menu. The first two options should yield good results for a variety of models. If you dislike the changes a layout applied, you can undo them by pressing CTRL+Z. I recommend starting with one of the two suggested layouts and then fine-tuning the diagram manually."
+  },
+  {
+    "objectID": "tutorial/appearance.html#changing-variance-arrows",
+    "href": "tutorial/appearance.html#changing-variance-arrows",
+    "title": "Changing Diagram Appearance",
+    "section": "Changing Variance Arrows",
+    "text": "Changing Variance Arrows\nlavaangui attempts to automatically find optimal positions for variance arrows to avoid overlap with other arrows. However, this may not yield satisfactory results for all models. You can manually position a variance loop through its context menu (Change/Fix Loop Orientation). Similarly, you can free the loop orientation (Free Loop Orientation) to allow lavaangui to automatically seek the best orientation again."
+  },
+  {
+    "objectID": "tutorial/appearance.html#changing-covariance-arrows",
+    "href": "tutorial/appearance.html#changing-covariance-arrows",
+    "title": "Changing Diagram Appearance",
+    "section": "Changing Covariance Arrows",
+    "text": "Changing Covariance Arrows\nCovariance arrows appear as curved arrows. To improve their appearance, you may need to alter the curvature of an arrow (making it straighter or more curved). This can be done by right-clicking on an undirected arrow and selecting Change Curvature."
+  },
+  {
+    "objectID": "tutorial/appearance.html#zooming",
+    "href": "tutorial/appearance.html#zooming",
+    "title": "Changing Diagram Appearance",
+    "section": "Zooming",
+    "text": "Zooming\nZoom in or out of the diagram using your mouse wheel or laptop trackpad. Alternatively, use the zoom slider in the top left corner of the Model Window. The button between the zoom sliders and the moving arrows automatically adjusts the zoom level so that the diagram fills the entire Model Window."
+  },
+  {
+    "objectID": "tutorial/before.html",
+    "href": "tutorial/before.html",
+    "title": "Limitations",
+    "section": "",
+    "text": "Beyond the limitations of lavaan, some features are not available (yet) in lavaangui:\n\nSupport for variable types other than continuous\nLikelihood ratio tests for model comparison\nMulti-group models\nDefined parameters\n\nWe hope to add these features to lavaangui in the future. In case you need these features right away, we can recommend the following alternatives\n\nCreate the model in lavaangui, export the script and use lavaan directly in R.\nUse Onyx instead. This is an alternative graphical structural equation modeling package, offering most of these features. The main downsides compared to lavaangui is that it is external standalone software requiring administrator privileges to be installed on most computers, and is not optimized for lavaan.\nIf you are looking for an alternative for plotting (plot_interactive), consider using semPlot, lavaanPlot, or tidySEM. The main downside is that the created visualizations are not interactive. The main upside is that it is easier to make to the creation of diagrams more reproducible.\n\nThe lavaangui package is free open-source software. This means (among other things) that there is no warranty whatsoever. On the other hand, you can verify the source code yourself: https://github.com/karchjd/lavaangui/"
+  },
+  {
+    "objectID": "tutorial/overview.html",
+    "href": "tutorial/overview.html",
+    "title": "Overview",
+    "section": "",
+    "text": "If you start the app via start_gui or visit https://solo-fsw.shinyapps.io/lavaangui/, the app will look like shown in the picture below. The text below describes it’s components. You can click on the image to enlarge it.\n\n\n\nOverview\n\n\n\n\nIn the Main Menu, you can do most of the actions that are not directly related to specifying the model. This includes, loading and saving data or models, changing the settings of lavaan, changing how your model is displayed, applying layouts to your model and getting help.\n\n\n\nThe most important function of the Top Toolbar is to enable you to create new variables by dragging the respective symbol into the model window. Besides this, it also displays which data set is currently loaded, and whether means are modeled or not.\n\n\n\nIn the Model Window, you specify your model and can inspect the estimated parameters as well as their p values and confidence intervals after you fitted your model.\n\n\n\nAfter fitting a model, the Results Window shows results such as model fit indices. The results window is also used to display the lavaan script that corresponds to your model.\n\n\n\nIn the Message Area, you will get messages from the app such as warnings, error messages but also success messages.\n\n\n\nThe Bottom Toolbar allows you to fit the model but also to show the full model as if it will be fitted by lavaan before fitting."
+  },
+  {
+    "objectID": "tutorial/overview.html#main-menu",
+    "href": "tutorial/overview.html#main-menu",
+    "title": "Overview",
+    "section": "",
+    "text": "In the Main Menu, you can do most of the actions that are not directly related to specifying the model. This includes, loading and saving data or models, changing the settings of lavaan, changing how your model is displayed, applying layouts to your model and getting help."
+  },
+  {
+    "objectID": "tutorial/overview.html#top-toolbar",
+    "href": "tutorial/overview.html#top-toolbar",
+    "title": "Overview",
+    "section": "",
+    "text": "The most important function of the Top Toolbar is to enable you to create new variables by dragging the respective symbol into the model window. Besides this, it also displays which data set is currently loaded, and whether means are modeled or not."
+  },
+  {
+    "objectID": "tutorial/overview.html#model-window",
+    "href": "tutorial/overview.html#model-window",
+    "title": "Overview",
+    "section": "",
+    "text": "In the Model Window, you specify your model and can inspect the estimated parameters as well as their p values and confidence intervals after you fitted your model."
+  },
+  {
+    "objectID": "tutorial/overview.html#results-window",
+    "href": "tutorial/overview.html#results-window",
+    "title": "Overview",
+    "section": "",
+    "text": "After fitting a model, the Results Window shows results such as model fit indices. The results window is also used to display the lavaan script that corresponds to your model."
+  },
+  {
+    "objectID": "tutorial/overview.html#message-area",
+    "href": "tutorial/overview.html#message-area",
+    "title": "Overview",
+    "section": "",
+    "text": "In the Message Area, you will get messages from the app such as warnings, error messages but also success messages."
+  },
+  {
+    "objectID": "tutorial/overview.html#bottom-toolbar",
+    "href": "tutorial/overview.html#bottom-toolbar",
+    "title": "Overview",
+    "section": "",
+    "text": "The Bottom Toolbar allows you to fit the model but also to show the full model as if it will be fitted by lavaan before fitting."
+  },
+  {
+    "objectID": "tutorial/model_specification.html",
+    "href": "tutorial/model_specification.html",
+    "title": "Model Specification",
+    "section": "",
+    "text": "As is typical in latent variable modeling, a model is specified by creating a set of nodes, which represent the variables, and connecting those with arrows, which represent the hypothesized relationships between the variables."
+  },
+  {
+    "objectID": "tutorial/model_specification.html#overview",
+    "href": "tutorial/model_specification.html#overview",
+    "title": "Model Specification",
+    "section": "",
+    "text": "As is typical in latent variable modeling, a model is specified by creating a set of nodes, which represent the variables, and connecting those with arrows, which represent the hypothesized relationships between the variables."
+  },
+  {
+    "objectID": "tutorial/model_specification.html#creating-variablesnodes",
+    "href": "tutorial/model_specification.html#creating-variablesnodes",
+    "title": "Model Specification",
+    "section": "Creating Variables/Nodes",
+    "text": "Creating Variables/Nodes\nlavaangui supports the 3 types of variables typically contained in a SEM: observed variables, latent variables, and the constant variable, represented as square, circle, or triangle, respectively.\nThere are three ways to create variables\n\nDrag and drop the respective symbol from the Top Toolbox onto the Model Window.\nRight-clicking at any empty space within the Model Window and selecting the desired variable type from the context menu. This will create a corresponding variable at the cursor location.\nPressing either, “o” (observed variable), “l” (latent variable), or “c” (constant) variable, while hovering with the mouse over the Model Window. This also creates a corresponding variable at the cursor location."
+  },
+  {
+    "objectID": "tutorial/model_specification.html#linking-variables-to-data",
+    "href": "tutorial/model_specification.html#linking-variables-to-data",
+    "title": "Model Specification",
+    "section": "Linking Variables to Data",
+    "text": "Linking Variables to Data\nTo fit a model, all observed variables must be linked to a variable in the data set. To link an observed variable node, give it the name of a variable in your data. This can be achieved by right-clicking the respective variable node and, selecting Rename Variable and then selecting from the variable names in the data set. After successfully linking a variable to a column in your data, you will get a success message in the Message Area and the border of the variable will become black, instead of grey."
+  },
+  {
+    "objectID": "tutorial/model_specification.html#arrows",
+    "href": "tutorial/model_specification.html#arrows",
+    "title": "Model Specification",
+    "section": "Arrows",
+    "text": "Arrows\nRegression relationships between variables are represented by directed arrows, whereas variances and covariance relationships are represented by undirected arrows. To draw a direct arrow, press and hold the CTRL key and drag the mouse from one variable (the start of the arrow) to another (the end of the arrow). If you hold the SHIFT instead of the CTRL key, you create an undirected arrow instead.\nThe context menu of an arrow, reachable by right-clicking on the arrow, contains arrow-related operations: You can decide whether the path coefficient should be fixed (Fix Parameter), declare a parameter to be freely estimated (Free Parameter) or force it to be estimated (Force Free Parameter). Visually a free arrow is displayed as a normal arrow, a fixed arrow contains @x as the label, where x is the value it is fixed to, and a “forced free” arrow is blue. The difference between a free parameter and a “forced free” parameter is that the latter prevents lavaan from fixing the parameter, as would for example be the case if the parameter would correspond to the first loading of a latent factor. You can also revert the direction of an arrow (Revert Direction), set a directed arrow to undirected (Set Undirected), or set an undirected arrow to directed (Set Directed). Another important operation is to give a path coefficient a label, which is reachable via Add/Change Label. Two path coefficients with the same label will be constrained to be equal during estimation."
+  },
+  {
+    "objectID": "tutorial/model_specification.html#changing-model-appearance",
+    "href": "tutorial/model_specification.html#changing-model-appearance",
+    "title": "Model Specification",
+    "section": "Changing Model Appearance",
+    "text": "Changing Model Appearance\nYou can drag variables around with the mouse to change the appearance of your model. For more advanced features, see Apperance."
+  },
+  {
+    "objectID": "tutorial/model_specification.html#model-autocomplete",
+    "href": "tutorial/model_specification.html#model-autocomplete",
+    "title": "Model Specification",
+    "section": "Model Autocomplete",
+    "text": "Model Autocomplete\nlavaangui relies on lavaan to augment the model specified by you such that it can be fit. Thus, almost always, the model you draw is not exactly the model that will be fitted. Before fitting the model, I thus recommend that you inspect the model that actually will be fit. You can do this by pressing the button Show Full Model in the bottom toolbar. In the resulting model, paths that are added or modified by lavaan are displayed as dashed lines.\nYou can control what is added to your model via the Automatically.. menu."
+  },
+  {
+    "objectID": "tutorial/result.html",
+    "href": "tutorial/result.html",
+    "title": "Inspecting Results",
+    "section": "",
+    "text": "The parameter estimates are automatically shown in the path diagram after the model has been fitted. You can change what is displayed in the View Menu. The remaining results are displayed in the Results Window."
+  },
+  {
+    "objectID": "tutorial/result.html#view-menu",
+    "href": "tutorial/result.html#view-menu",
+    "title": "Inspecting Results",
+    "section": "View Menu",
+    "text": "View Menu\nIn the View Menu, you can modify how the model is displayed. First, you can toggle Arrows Created by Lavaan and Variance Arrows on or off. Second, you can decide whether to show Standardized Estimates or not. Third, you can select what estimates should be displayed: Estimate only, Confidence Interval, Estimate + p-values, or Estimate + Standard Error."
+  },
+  {
+    "objectID": "tutorial/result.html#results-window",
+    "href": "tutorial/result.html#results-window",
+    "title": "Inspecting Results",
+    "section": "Results Window",
+    "text": "Results Window\nIn the Results Window, all other results are shown. The first section under $summary contains the model summary by lavaan. See the lavaan documentation for an explanation. The second section under $estimates contains the parameter estimates in the form of a table. See the lavaan documentation for an explanation of the table."
+  },
+  {
+    "objectID": "tutorial/save.html",
+    "href": "tutorial/save.html",
+    "title": "Saving and Exporting",
+    "section": "",
+    "text": "After completing an analysis, you may want to save it and share the results."
+  },
+  {
+    "objectID": "tutorial/save.html#saving-the-model",
+    "href": "tutorial/save.html#saving-the-model",
+    "title": "Saving and Exporting",
+    "section": "Saving the Model",
+    "text": "Saving the Model\nTo save the analysis (model and data), use the option File &gt; Download Model and Data. To reload the analysis in the future, use File &gt; Load Model and Data. It’s also possible to save only the model via File &gt; Download Model and load it later using File &gt; Load Model."
+  },
+  {
+    "objectID": "tutorial/save.html#exporting-the-diagram",
+    "href": "tutorial/save.html#exporting-the-diagram",
+    "title": "Saving and Exporting",
+    "section": "Exporting the Diagram",
+    "text": "Exporting the Diagram\nThere are two options for exporting the diagram as an image: File &gt; Export Diagram to PNG and File &gt; Export Diagram to JPG."
+  },
+  {
+    "objectID": "tutorial/means.html",
+    "href": "tutorial/means.html",
+    "title": "Means",
+    "section": "",
+    "text": "By and large, structural equation models are used to model the covariance matrix of the observed variables in a dataset. But in some applications, it is useful to bring in the means of the observed variables too. One way to do this is to simply a constant variable in the model. A typical example would be the growth model shown below XXX.\nAnother alternative, in graphicalLavaan is to ask graphicalLavaan to automatically add means to the model. This can be done by going to Mean Options-&gt; Model Means? and selecting Yes. Afterwards the two other menu options in Mean Options can be used to decide what means should be added to the model. Again also for this case, we recommend using Show Full model to ensure that graphicalLavaan does the thing you intended.\nThe Add intercepts menu options also can have an effect when model means is set an automatic. In automatic lavaan decides whether to include models or not based on the model. On important case is when the model contains a constant variable, in which means are added to the model and the Add intercept options will have an effect. Again, also check the Full Model before fitting any model.\nThe mean status bar in the top toolboar always informs you whether means are being modeled or not."
+  },
+  {
+    "objectID": "tutorial/help.html",
+    "href": "tutorial/help.html",
+    "title": "Getting Help",
+    "section": "",
+    "text": "Help\nIf you need help, please open an issue at https://github.com/karchjd/lavaangui/issues or email me directly.\n\n\nBug\nThe same applies if you think you have found a bug, or if you have a suggestion for improvement. If you report a bug, always provide a minimal reproducible example. In the case of lavaangui this is typically a minimal set of interactions with the app that causes the erorr."
+  },
+  {
+    "objectID": "tutorial/installation.html",
+    "href": "tutorial/installation.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "For the web application, no installation is necessary. Simply go to https://lavaangui.org. The web application requires a modern browser but unfortunately does not work with Safari. It is continuously being tested on Chrome, Firefox, and Edge. It has been most extensively tested using Chrome, which we recommend if you have the choice."
+  },
+  {
+    "objectID": "tutorial/installation.html#installation",
+    "href": "tutorial/installation.html#installation",
+    "title": "Getting Started",
+    "section": "Installation",
+    "text": "Installation\nYou can install the latest version of the R package via the following commands.\n\nif (!requireNamespace(\"remotes\", quietly = TRUE)) {\n  install.packages(\"remotes\")\n}\nremotes::install_github(\"karchjd\\lavaangui\")\n\nYou will also need a modern web browser, which typically should already be installed on your system. However, note that Safari is not supported, as explained in Section 1."
+  },
+  {
+    "objectID": "tutorial/installation.html#start_gui",
+    "href": "tutorial/installation.html#start_gui",
+    "title": "Getting Started",
+    "section": "start_gui",
+    "text": "start_gui\nYou can start the lavaangui web application by typing\n\nstart_gui()\n\ninto your R console.\nAlternatively, you can also use the command start_gui(fit), where fit is any supported fitted lavaan object. This will initialize the web application with the model and data contained in fit. For example, the following code initializes the web application with a three factor model.\n\nlibrary(lavaan)\nHS.model &lt;- ' visual  =~ x1 + x2 + x3\n              textual =~ x4 + x5 + x6\n              speed   =~ x7 + x8 + x9 '\n\nfit &lt;- cfa(HS.model, data = HolzingerSwineford1939)\nstart_gui(fit)"
+  },
+  {
+    "objectID": "tutorial/installation.html#plot_interactive",
+    "href": "tutorial/installation.html#plot_interactive",
+    "title": "Getting Started",
+    "section": "plot_interactive",
+    "text": "plot_interactive\nIf you only want an interactive visualization of your fitted lavaan model, we recommend the plot_interactive(fit) function. This disables all facilities of modifying or refitting the model and if you are using Rstudio displays the model directly in Rstudio. For example, the following code plots a three factor model.\n\nlibrary(lavaan)\nHS.model &lt;- ' visual  =~ x1 + x2 + x3\n              textual =~ x4 + x5 + x6\n              speed   =~ x7 + x8 + x9 '\n\nfit &lt;- cfa(HS.model, data = HolzingerSwineford1939)\nplot_interactive(fit)"
   }
 ]

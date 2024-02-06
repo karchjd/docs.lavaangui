@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>docs.lavaangui.org - lavaangui</title>
+<title>docs.lavaangui.org - Contribute</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -120,7 +86,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contribute.html" rel="" target="">
+    <a class="nav-link active" href="./contribute.html" rel="" target="" aria-current="page">
  <span class="menu-text">Contribute</span></a>
   </li>  
 </ul>
@@ -139,16 +105,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a>
+  <li><a href="#feature-requests" id="toc-feature-requests" class="nav-link active" data-scroll-target="#feature-requests">Feature Requests</a></li>
+  <li><a href="#bug-reports" id="toc-bug-reports" class="nav-link" data-scroll-target="#bug-reports">Bug Reports</a></li>
+  <li><a href="#contribute-code" id="toc-contribute-code" class="nav-link" data-scroll-target="#contribute-code">Contribute Code</a></li>
+  <li><a href="#tech-stack" id="toc-tech-stack" class="nav-link" data-scroll-target="#tech-stack">Tech Stack</a>
   <ul class="collapse">
-  <li><a href="#web-application" id="toc-web-application" class="nav-link" data-scroll-target="#web-application">Web application</a></li>
-  <li><a href="#r-package" id="toc-r-package" class="nav-link" data-scroll-target="#r-package">R Package</a>
-  <ul class="collapse">
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#start_gui" id="toc-start_gui" class="nav-link" data-scroll-target="#start_gui"><code>start_gui</code></a></li>
-  <li><a href="#plot_interactive" id="toc-plot_interactive" class="nav-link" data-scroll-target="#plot_interactive"><code>plot_interactive</code></a></li>
+  <li><a href="#frontend" id="toc-frontend" class="nav-link" data-scroll-target="#frontend">Frontend:</a></li>
+  <li><a href="#backend" id="toc-backend" class="nav-link" data-scroll-target="#backend">Backend:</a></li>
+  <li><a href="#testing-and-deployment" id="toc-testing-and-deployment" class="nav-link" data-scroll-target="#testing-and-deployment">Testing and Deployment:</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation:</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#recommended-ides" id="toc-recommended-ides" class="nav-link" data-scroll-target="#recommended-ides">Recommended IDEs</a></li>
   </ul>
 </nav>
     </div>
@@ -157,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">lavaangui</h1>
+<h1 class="title">Contribute</h1>
 </div>
 
 
@@ -172,92 +140,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>lavaangui is currently still under development. Thus, please do not use it yet.</p>
-</div>
-</div>
-<p>The <code>lavaangui</code> package provides a free, open-source graphical user interface for the <a href="https://lavaan.org/">lavaan</a> package. The core feature is that models can be specified by drawing path diagrams and fitted models visualized via interactive path diagrams.</p>
-<p>There are multiple ways to use the <code>lavaangui</code> package.</p>
-<ol type="1">
-<li><p><strong>Web application:</strong> The easiest is visit <a href="https://solo-fsw.shinyapps.io/lavaangui/" class="uri">https://solo-fsw.shinyapps.io/lavaangui/</a> and use it as a web application. This requires no additional software besides a web browser. The main downside of this is that the webserver is likely slower than your computer. So, fitting complicated models might take a long time.</p></li>
-<li><p><strong>Local web application:</strong> After installing the <code>lavaangui</code> package (see below), you can start a local version of the web application via the <code>start_gui()</code> command.</p></li>
-<li><p><strong>Interactive plots:</strong> <code>lavaangui</code> can also be used for plotting <code>lavaan</code> models that were created in R. For this, use <code>plot_interactive(fit)</code>. This will create a path diagram of your model. The core difference compared to other packages for plotting <code>lavaan</code> models is that the resulting plot is interactive. That is, you can change its appearance easily, for example, by dragging around nodes with your mouse.</p></li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The official reference for the lavaangui package is as follows:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Karch, J. D., (2024). <em>lavaangui: Graphical User Interface for lavaan.</em> R package. <a href="https://github.com/karchjd/lavaangui" class="uri">https://github.com/karchjd/lavaangui</a></p>
-</div>
-</div>
-<section id="getting-started" class="level1">
-<h1>Getting Started</h1>
-<section id="web-application" class="level2">
-<h2 class="anchored" data-anchor-id="web-application">Web application</h2>
-<p>For the web application, no installation is necessary. Simply go to <a href="https://solo-fsw.shinyapps.io/lavaangui/" class="uri">https://solo-fsw.shinyapps.io/lavaangui/</a>. The web application requires a modern browser. It is continuously being tested on Chrome, Firefox, and Edge, which I thus recommend. It unfortunately does not work with Safari due to Apples reluctance to support many modern web features.</p>
+<section id="feature-requests" class="level2">
+<h2 class="anchored" data-anchor-id="feature-requests">Feature Requests</h2>
+<p>An easy way to contribute is to request a new feature that you need for your work. To do this, please use <a href="https://github.com/karchjd/lavaangui/issues">https://github.com/karchjd/lavaangui/issues</a>.</p>
 </section>
-<section id="r-package" class="level2">
-<h2 class="anchored" data-anchor-id="r-package">R Package</h2>
-<section id="installation" class="level3">
-<h3 class="anchored" data-anchor-id="installation">Installation</h3>
-<p>Only Windows users first need to install <a href="https://cran.r-project.org/bin/windows/Rtools/" target="_blank">Rtools</a>. Then, you can install the latest version of the R package via the following commands.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"karchjd/lavaangui"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You will also need a modern web browser, which typically should already be installed on your system. However, note that Safari is not supported, as explained earlier.</p>
+<section id="bug-reports" class="level2">
+<h2 class="anchored" data-anchor-id="bug-reports">Bug Reports</h2>
+<p>Similarly, if you find a bug, please also provide a bug report at <a href="https://github.com/karchjd/lavaangui/issues">https://github.com/karchjd/lavaangui/issues</a>.</p>
 </section>
-<section id="start_gui" class="level3">
-<h3 class="anchored" data-anchor-id="start_gui"><code>start_gui</code></h3>
-<p>You can start the <code>lavaangui</code> web application by typing</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">start_gui</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>into your R console.</p>
-<p>Alternatively, you can also use the command <code>start_gui(fit)</code>, where <code>fit</code> is any supported fitted lavaan object. This will initialize the web application with the model and data contained in fit. For example, the following code initializes the web application with a three factor model.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>HS.model <span class="ot">&lt;-</span> <span class="st">' visual  =~ x1 + x2 + x3</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">              textual =~ x4 + x5 + x6</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">              speed   =~ x7 + x8 + x9 '</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">cfa</span>(HS.model, <span class="at">data =</span> HolzingerSwineford1939)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">start_gui</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="contribute-code" class="level2">
+<h2 class="anchored" data-anchor-id="contribute-code">Contribute Code</h2>
+<p>Since <code>lavaangui</code> is open-source, everybody is invited to work on <code>lavaangui</code>. You can contribute as usual, via pull requests.</p>
 </section>
-<section id="plot_interactive" class="level3">
-<h3 class="anchored" data-anchor-id="plot_interactive"><code>plot_interactive</code></h3>
-<p>To obtain an interactive plot of your fitted model, use the <code>plot_interactive(fit)</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>HS.model <span class="ot">&lt;-</span> <span class="st">' visual  =~ x1 + x2 + x3</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">              textual =~ x4 + x5 + x6</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">              speed   =~ x7 + x8 + x9 '</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">cfa</span>(HS.model, <span class="at">data =</span> HolzingerSwineford1939)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_interactive</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="tech-stack" class="level2">
+<h2 class="anchored" data-anchor-id="tech-stack">Tech Stack</h2>
+<p>While to a user <code>lavaangui</code> looks like any other shiny app, its Tech Stack is substantially more complicated than a typical shiny app. Below, I list the main technologies used for potential contributors:</p>
+<section id="frontend" class="level3">
+<h3 class="anchored" data-anchor-id="frontend">Frontend:</h3>
+<ul>
+<li>Javascript + HTML + CSS: The front-end of <code>lavaangui</code> is entirely written in HTML, Javascript, and CSS. There is no R code in the front-end.</li>
+<li><a href="https://svelte.dev/">Svelte</a>: The frontend framework employed for its reactive programming capabilities, reusable components, state management, etc.</li>
+<li><a href="https://js.cytoscape.org/">Cytoscape.js</a>: The graph library enabling all graph interactions.</li>
+<li><a href="https://getbootstrap.com/docs/3.3/">Bootstrap 3</a>: Responsible for the visual style and chosen because it is also employed by shiny.</li>
+</ul>
+</section>
+<section id="backend" class="level3">
+<h3 class="anchored" data-anchor-id="backend">Backend:</h3>
+<p>The backend is rather small and entirely written in R, making server contributions relatively straightforward.</p>
+</section>
+<section id="testing-and-deployment" class="level3">
+<h3 class="anchored" data-anchor-id="testing-and-deployment">Testing and Deployment:</h3>
+<ul>
+<li><a href="https://playwright.dev/">Playwright</a> for (end-to-end) testing.</li>
+<li><a href="https://github.com/features/actions">GitHub Actions</a> for CI/CD.</li>
+</ul>
+</section>
+<section id="documentation" class="level3">
+<h3 class="anchored" data-anchor-id="documentation">Documentation:</h3>
+<p>This website has been created with <a href="https://quarto.org/docs/websites/">quarto</a>.</p>
+</section>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>First, use GitHub to create a fork. Then, create a local clone of your repository.</p>
+<p>Install dependencies:</p>
+<ul>
+<li><a href="https://nodejs.org/en/">Node.js</a></li>
+<li>R</li>
+<li>Front-end dependencies: Run <code>npm run install</code> from a shell in the <code>src/</code> folder.</li>
+<li>Back-end dependencies: Execute <code>devtools::install_local(dependencies = TRUE)</code> in R, with the working directory set to the root folder of the package.</li>
+</ul>
+<p>The file <a href="https://github.com/karchjd/lavaangui/blob/main/dev/compile_restart_dev.R">https://github.com/karchjd/lavaangui/blob/main/dev/compile_restart_dev.R</a> compiles the front-end and starts the app locally in your browser.</p>
+</section>
+<section id="recommended-ides" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-ides">Recommended IDEs</h2>
+<p>For the frontend and the end-to-end tests, I have used <a href="https://code.visualstudio.com/">Visual Studio</a> and for the backend <a href="https://posit.co/download/rstudio-desktop/">R Studio</a>.</p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -35,13 +35,13 @@ For the web application, no installation is necessary. Simply go to <https://sol
 
 ### Installation
 
-You can install the latest version of the R package via the following commands.
+Only Windows users first need to install [Rtools](https://cran.r-project.org/bin/windows/Rtools/){target="_blank"}. Then, you can install the latest version of the R package via the following commands.
 
 ```{r, eval = FALSE, echo = TRUE}
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
-remotes::install_github("karchjd\lavaangui")
+remotes::install_github("karchjd/lavaangui")
 ```
 
 You will also need a modern web browser, which typically should already be installed on your system. However, note that Safari is not supported, as explained earlier.
