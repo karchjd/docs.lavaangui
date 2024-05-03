@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "lavaangui",
     "section": "",
-    "text": "Important\n\n\n\nlavaangui is currently still under development. Thus, please do not use it yet.\nThe lavaangui package provides a free, open-source graphical user interface for the lavaan package. The core feature is that models can be specified by drawing path diagrams and fitted models visualized via interactive path diagrams.\nThere are multiple ways to use the lavaangui package."
+    "text": "Important\n\n\n\nlavaangui is currently still under development. Thus, please do not use it yet. Additionally, this user guide is hopelessly out of data at the moment.\nThe lavaangui package provides a free, open-source graphical user interface for the lavaan package. The core feature is that models can be specified by drawing path diagrams and fitted models visualized via interactive path diagrams.\nThere are multiple ways to use the lavaangui package."
   },
   {
     "objectID": "index.html#web-application",

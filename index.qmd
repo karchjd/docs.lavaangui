@@ -5,7 +5,7 @@ sidebar: false
 ---
 
 ::: callout-important
-lavaangui is currently still under development. Thus, please do not use it yet.
+lavaangui is currently still under development. Thus, please do not use it yet. Additionally, this user guide is hopelessly out of date at the moment.
 :::
 
 
