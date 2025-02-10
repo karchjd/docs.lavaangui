@@ -4,80 +4,75 @@ format: html
 sidebar: false
 ---
 
-::: callout-important
-lavaangui is currently still under development. Thus, please do not use it yet. Additionally, this user guide is hopelessly out of date at the moment.
-:::
+The `lavaangui` package provides a free, open-source graphical user interface for the [lavaan](https://lavaan.ugent.be) package. The core feature is that models can be specified by drawing path diagrams and fitted models visualized via interactive path diagrams.
 
+There are three main ways to use the `lavaangui` package.
 
-The `lavaangui` package provides a free, open-source graphical user interface for the [lavaan](https://lavaan.org/) package. The core feature is that models can be specified by drawing path diagrams and fitted models visualized via interactive path diagrams.
+1.  **Web application:** The easiest is to visit [https://lavaangui.org/](https://solo-fsw.shinyapps.io/lavaangui/) and use it as a web application. This requires no additional software besides a web browser. The main downside of this is that the webserver is likely slower than your computer. So, fitting complicated models might take a long time. The app is likely also more responsive on your computer.
 
-There are multiple ways to use the `lavaangui` package.
+2. **Local web application:** After installing the  `lavaangui` package (see below), you can start a local version of the web application via the `lavaangui()` command.
 
-1.  **Web application:** The easiest is visit <https://solo-fsw.shinyapps.io/lavaangui/> and use it as a web application. This requires no additional software besides a web browser. The main downside of this is that the webserver is likely slower than your computer. So, fitting complicated models might take a long time.
+3. **Interactive plots:** `lavaangui` can also be used for plotting `lavaan` models that were created in R. For this, use `plot_lavaan(fit)`. This will create a path diagram of your model. The core difference compared to other packages for plotting `lavaan` models is that the resulting plot is interactive. That is, you can change its appearance easily, for example, by dragging around nodes with your mouse.
 
-2. **Local web application:** After installing the  `lavaangui` package (see below), you can start a local version of the web application via the `start_gui()` command.
-
-3. **Interactive plots:** `lavaangui` can also be used for plotting `lavaan` models that were created in R. For this, use `plot_interactive(fit)`. This will create a path diagram of your model. The core difference compared to other packages for plotting `lavaan` models is that the resulting plot is interactive. That is, you can change its appearance easily, for example, by dragging around nodes with your mouse.
-
+An extensive tutorial on using `lavaangui` is available at [https://doi.org/10.1080/10705511.2024.2420678](https://doi.org/10.1080/10705511.2024.2420678).
 
 ::: callout-tip
 # The official reference for the lavaangui package is as follows:
-Karch, J. D., (2024). *lavaangui: Graphical User Interface  for lavaan.* R package. <https://github.com/karchjd/lavaangui>
+Karch, J. D. (2025). lavaangui: A Web-Based Graphical Interface for Specifying Lavaan Models by Drawing Path Diagrams. *Structural Equation Modeling: A Multidisciplinary Journal*, 32(1), 1-15. [https://doi.org/10.1080/10705511.2024.2420678](https://doi.org/10.1080/10705511.2024.2420678)
 :::
+
 
 # Getting Started
 
 ## Web application
 
-For the web application, no installation is necessary. Simply go to <https://solo-fsw.shinyapps.io/lavaangui/>. The web application requires a modern browser. It is continuously being tested on Chrome, Firefox, and Edge, which I thus recommend. It unfortunately does not work with Safari due to Apples reluctance to support many modern web features. 
+For the web application, no installation is necessary. Simply go to [https://lavaangui.org/](https://solo-fsw.shinyapps.io/lavaangui/). The web application should work with any modern browser. It is continuously being tested with: Chrome, Edge, Safari, Firefox, and Opera. 
 
 ## R Package
 
 ### Installation
 
-Only Windows users first need to install [Rtools](https://cran.r-project.org/bin/windows/Rtools/){target="_blank"}. Then, you can install the latest version of the R package via the following commands.
+You can install the latest version of the R package as usual using the following command:
 
-```{r, eval = FALSE, echo = TRUE}
-if (!requireNamespace("remotes", quietly = TRUE)) {
-  install.packages("remotes")
-}
-remotes::install_github("karchjd/lavaangui")
+```{r, eval = FALSE}
+install.packages("lavaangui")
 ```
 
-You will also need a modern web browser, which typically should already be installed on your system. However, note that Safari is not supported, as explained earlier.
-
-### `start_gui`
+### `lavaangui()`
 
 You can start the `lavaangui` web application by typing 
 
 ```{r, eval = FALSE}
-start_gui()
+library(lavaangui)
+lavaangui()
 ```
 
 into your R console.
 
-Alternatively, you can also use the command `start_gui(fit)`, where `fit` is any supported fitted lavaan object. This will initialize the web application with the model and data contained in fit. For example, the following code initializes the web application with a three factor model.
+Alternatively, you can also use the command `lavaangui(fit)`, where `fit` is any supported fitted lavaan object. This will initialize the web application with the model (and data) contained in fit. For example, the following code initializes the web application with a three factor model.
 
 ```{r, eval = FALSE}
 library(lavaan)
+library(lavaangui)
 HS.model <- ' visual  =~ x1 + x2 + x3
               textual =~ x4 + x5 + x6
               speed   =~ x7 + x8 + x9 '
 
 fit <- cfa(HS.model, data = HolzingerSwineford1939)
-start_gui(fit)
+lavangui(fit)
 ```
 
-### `plot_interactive`
+### `plot_lavaan()`
 
-To obtain an interactive plot of your fitted model, use the `plot_interactive(fit)` function:
+To obtain an interactive plot of your fitted model without leaving R Studio, use the `plot_lavaan(fit)` function:
 
 ```{r, eval = FALSE}
 library(lavaan)
+library(lavaangui)
 HS.model <- ' visual  =~ x1 + x2 + x3
               textual =~ x4 + x5 + x6
               speed   =~ x7 + x8 + x9 '
 
 fit <- cfa(HS.model, data = HolzingerSwineford1939)
-plot_interactive(fit)
+plot_lavaan(fit)
 ```

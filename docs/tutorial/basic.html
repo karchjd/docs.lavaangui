@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Changing Diagram Appearance – docs.lavaangui.org</title>
+<title>Basic Features – docs.lavaangui.org</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,11 +89,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../tutorial/overview.html" aria-current="page"> 
+    <a class="nav-link active" href="../tutorial/basic.html" aria-current="page"> 
 <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../contribute.html"> 
+    <a class="nav-link" href="https://github.com/karchjd/lavaangui/blob/main/CONTRIBUTING.md"> 
 <span class="menu-text">Contribute</span></a>
   </li>  
 </ul>
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorial/appearance.html">Changing Diagram Appearance</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorial/basic.html">Basic Features</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -121,56 +121,8 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorial/overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../tutorial/loading_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Loading Data</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../tutorial/model_specification.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Specification</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../tutorial/fitting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Fitting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../tutorial/result.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inspecting Results</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../tutorial/appearance.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Changing Diagram Appearance</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../tutorial/save.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Saving and Exporting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../tutorial/before.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Limitations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../tutorial/help.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Getting Help</span></a>
+  <a href="../tutorial/basic.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Basic Features</span></a>
   </div>
 </li>
     </ul>
@@ -178,25 +130,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#moving-nodes" id="toc-moving-nodes" class="nav-link active" data-scroll-target="#moving-nodes">Moving Nodes</a></li>
-  <li><a href="#automatic-layouts" id="toc-automatic-layouts" class="nav-link" data-scroll-target="#automatic-layouts">Automatic Layouts</a></li>
-  <li><a href="#changing-variance-arrows" id="toc-changing-variance-arrows" class="nav-link" data-scroll-target="#changing-variance-arrows">Changing Variance Arrows</a></li>
-  <li><a href="#changing-covariance-arrows" id="toc-changing-covariance-arrows" class="nav-link" data-scroll-target="#changing-covariance-arrows">Changing Covariance Arrows</a></li>
-  <li><a href="#zooming" id="toc-zooming" class="nav-link" data-scroll-target="#zooming">Zooming</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Changing Diagram Appearance</h1>
+<h1 class="title">Basic Features</h1>
 </div>
 
 
@@ -213,29 +155,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>There are multiple approaches to change the appearance of the path diagram.</p>
-<section id="moving-nodes" class="level2">
-<h2 class="anchored" data-anchor-id="moving-nodes">Moving Nodes</h2>
-<p>First, you can manually move nodes by dragging them around with your mouse. To reposition the entire graph, click on an empty space and drag the graph around with your mouse. Alternatively, you can use the arrows at the top left corner of the <code>Model Window</code>. To select multiple nodes for dragging, press <code>CTRL</code>. This activates a selection rectangle. You can also hold <code>CTRL</code> while clicking on multiple nodes to select them all.</p>
-</section>
-<section id="automatic-layouts" class="level2">
-<h2 class="anchored" data-anchor-id="automatic-layouts">Automatic Layouts</h2>
-<p>You can apply automatic layouts to your path diagram via the <code>Apply Layout</code> menu. The first two options should yield good results for a variety of models. If you dislike the changes a layout applied, you can undo them by pressing <code>CTRL+Z</code>. I recommend starting with one of the two suggested layouts and then fine-tuning the diagram manually.</p>
-</section>
-<section id="changing-variance-arrows" class="level2">
-<h2 class="anchored" data-anchor-id="changing-variance-arrows">Changing Variance Arrows</h2>
-<p><code>lavaangui</code> attempts to automatically find optimal positions for variance arrows to avoid overlap with other arrows. However, this may not yield satisfactory results for all models. You can manually position a variance loop through its context menu (<code>Change/Fix Loop Orientation</code>). Similarly, you can free the loop orientation (<code>Free Loop Orientation</code>) to allow <code>lavaangui</code> to automatically seek the best orientation again.</p>
-</section>
-<section id="changing-covariance-arrows" class="level2">
-<h2 class="anchored" data-anchor-id="changing-covariance-arrows">Changing Covariance Arrows</h2>
-<p>Covariance arrows appear as curved arrows. To improve their appearance, you may need to alter the curvature of an arrow (making it straighter or more curved). This can be done by right-clicking on an undirected arrow and selecting <code>Change Curvature</code>.</p>
-</section>
-<section id="zooming" class="level2">
-<h2 class="anchored" data-anchor-id="zooming">Zooming</h2>
-<p>Zoom in or out of the diagram using your mouse wheel or laptop trackpad. Alternatively, use the zoom slider in the top left corner of the <code>Model Window</code>. The button between the zoom sliders and the moving arrows automatically adjusts the zoom level so that the diagram fills the entire <code>Model Window</code>.</p>
+<p>All basic features of <code>lavaangui</code> are covered in this tutorial paper: <a href="https://doi.org/10.1080/10705511.2024.2420678">https://doi.org/10.1080/10705511.2024.2420678</a>.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -1,0 +1,5 @@
+---
+  title: Basic Features
+---
+  
+All basic features of `lavaangui` are covered in this tutorial paper: [https://doi.org/10.1080/10705511.2024.2420678](https://doi.org/10.1080/10705511.2024.2420678).

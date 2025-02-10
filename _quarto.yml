@@ -13,25 +13,16 @@ website:
     search: true
     left:
       - text: "Documentation"
-        file: tutorial/overview.qmd
+        file: tutorial/basic.qmd
       - text: "Contribute"
-        file: contribute.qmd
+        href: https://github.com/karchjd/lavaangui/blob/main/CONTRIBUTING.md
       
   sidebar:
     - title: "Tutorial"
       style: "docked"
       background: light
       contents:
-        - tutorial/overview.qmd
-        - tutorial/loading_data.qmd
-        - tutorial/model_specification.qmd
-        - tutorial/fitting.qmd
-        - tutorial/result.qmd
-        - tutorial/appearance.qmd
-        - tutorial/save.qmd
-        - tutorial/before.qmd
-        - tutorial/help.qmd
-
+        - tutorial/basic.qmd
         
 
 format:
